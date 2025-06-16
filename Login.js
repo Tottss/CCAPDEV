@@ -1,7 +1,8 @@
-const users = [
-    { username: "Jeru", password: "password" },
-    { username: "Admin", password: "1234" },
-  ];
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+  function saveUsers() {
+    localStorage.setItem("users", JSON.stringify(users));
+  }
 
   document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault(); 
@@ -16,5 +17,24 @@ const users = [
         window.location.href = "main.html";
     } else {
       alert("Incorrect User or Password.");
+    }
+
+    
+});
+
+document.getElementById("signupForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const username = document.getElementById("signupUsername").value.trim();
+    const password = document.getElementById("signupPassword").value;
+
+    const exists = users.some(user => user.username === username);
+
+    if (exists) {
+      alert("Username already taken.");
+    } else {
+      users.push({ username, password });
+      saveUsers(); // save to localStorage
+      alert("User registered! You can now log in.");
+      e.target.reset();
     }
 });
