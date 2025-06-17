@@ -48,6 +48,11 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
     const username = document.getElementById("signupUsername").value.trim();
     const password = document.getElementById("signupPassword").value;
 
+
+    if (!email.endsWith("@dlsu.edu.ph")) {
+    alert(" Email must be a valid DLSU email ending in @dlsu.edu.ph");
+    return;
+  }
     // Check if username already exists
     const exists = users.some(user => user.username === username);
 
@@ -64,7 +69,7 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
     });
 
     saveUsers(); // Save to localStorage
-    alert("✅ User registered! You can now log in.");
+    alert("User registered! You can now log in.");
     e.target.reset(); // Clear the form
     window.location.href = "login.html";
     }
