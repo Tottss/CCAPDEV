@@ -6,7 +6,11 @@ function saveUsers() { // saving users to local storage
 
 const rememberedUser = JSON.parse(localStorage.getItem("rememberedUser")); // remember me feature
 if (rememberedUser) {
-    window.location.href = "main.html";
+    document.addEventListener("DOMContentLoaded", () => {
+        document.getElementById("username").value = rememberedUser.username;
+        document.getElementById("password").value = rememberedUser.password;
+        document.getElementById("rememberMe").checked = true;
+    })
 }
 
 document.querySelector("form").addEventListener("submit", function (e) { // login form submission
@@ -22,7 +26,10 @@ document.querySelector("form").addEventListener("submit", function (e) { // logi
 
     if (userFound) {
         if (rememberMe) {
-            localStorage.setItem("rememberedUser", JSON.stringify({ username }));
+            localStorage.setItem("rememberedUser", JSON.stringify({ username, password }));
+        }
+        else {
+            localStorage.removeItem("rememberedUser");
         }
         window.location.href = "main.html";
     } else {
@@ -32,33 +39,33 @@ document.querySelector("form").addEventListener("submit", function (e) { // logi
 
 
 document.getElementById("signupForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+    e.preventDefault();
 
-  // Get form input values
-  const firstName = document.getElementById("firstName").value.trim();
-  const lastName = document.getElementById("lastName").value.trim();
-  const email = document.getElementById("signupEmail").value.trim();
-  const username = document.getElementById("signupUsername").value.trim();
-  const password = document.getElementById("signupPassword").value;
+    // Get form input values
+    const firstName = document.getElementById("firstName").value.trim();
+    const lastName = document.getElementById("lastName").value.trim();
+    const email = document.getElementById("signupEmail").value.trim();
+    const username = document.getElementById("signupUsername").value.trim();
+    const password = document.getElementById("signupPassword").value;
 
-  // Check if username already exists
-  const exists = users.some(user => user.username === username);
+    // Check if username already exists
+    const exists = users.some(user => user.username === username);
 
-  if (exists) {
-    alert("Username already taken.");
-  } else {
+    if (exists) {
+        alert("Username already taken.");
+    } else {
     // Add new user with all fields
-    users.push({
-      firstName,
-      lastName,
-      email,
-      username,
-      password
+        users.push({
+            firstName,
+            lastName,
+            email,
+            username,
+            password
     });
 
     saveUsers(); // Save to localStorage
     alert("✅ User registered! You can now log in.");
     e.target.reset(); // Clear the form
     window.location.href = "login.html";
-  }
+    }
 });
