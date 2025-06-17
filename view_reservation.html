@@ -70,13 +70,13 @@
                     </div>
 
                     <!-- dropdown thing -->
-                    <div class="relative">
-                        <button class="edit bg-gray-100 px-3 py-1 rounded-md text-sm shadow-sm hover:bg-green-100 self-center">
+                    <div class="flex self-center relative">
+                        <button class="edit bg-gray-100 px-3 py-1 rounded-md text-sm shadow-sm hover:bg-green-100">
                         Edit this reservation
                         </button>
 
-                        <!-- Dropdown Menu -->
-                        <div class="dropdown absolute mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 hidden z-100">
+                        <!-- dropdown menu -->
+                        <div class="dropdown absolute mt-7 w-48 bg-white rounded-md shadow-lg border border-gray-200 hidden z-100">
                             <ul class="py-1 text-sm text-gray-700">
                             <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Reschedule Booking</a></li>
                             <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Change Seats</a></li>
@@ -92,20 +92,20 @@
 </body>
 <script>
     document.querySelectorAll('.edit').forEach(button => {
-    button.addEventListener('click', (e) => {
-        const dropdown = e.target.nextElementSibling;
-        dropdown.classList.toggle('hidden');
+        button.addEventListener('click', (e) => {
+            const dropdown = e.target.nextElementSibling;
+            dropdown.classList.toggle('hidden');
 
-        // Close other open dropdowns
-        document.querySelectorAll('.dropdown').forEach(d => {
-        if (d !== dropdown) d.classList.add('hidden');
+            // close other open dropdowns
+            document.querySelectorAll('.dropdown').forEach(d => {
+            if (d !== dropdown) d.classList.add('hidden');
+            });
         });
-    });
     });
 
     document.addEventListener('click', (e) => {
-    if (!e.target.closest('.edit') && !e.target.closest('.dropdown')) {
-        document.querySelectorAll('.dropdown').forEach(d => d.classList.add('hidden'));
-    }
+        if (!e.target.closest('.edit') && !e.target.closest('.dropdown')) {
+            document.querySelectorAll('.dropdown').forEach(d => d.classList.add('hidden'));
+        }
     });
 </script>
