@@ -17,10 +17,14 @@ document.querySelector("form").addEventListener("submit", function (e) { // logi
     e.preventDefault(); // prevents reload on submission
 
     // gets input from login forms
-    const username = document.getElementById("username").value.trim();
-    const password = document.getElementById("password").value;
+    const usernameInput = document.getElementById("username");
+    const passwordInput = document.getElementById("password");
     const rememberMe = document.getElementById("rememberMe").checked;
+    const Error = document.getElementById('Error');
+    
 
+    const username = usernameInput.value.trim();
+    const password = passwordInput.value;
     // checks if there's a user in the user array
     const userFound = users.some(user => user.username === username && user.password === password);
 
@@ -33,26 +37,82 @@ document.querySelector("form").addEventListener("submit", function (e) { // logi
         }
         window.location.href = "main.html";
     } else {
-        alert("Incorrect User or Password.");
+        Error.textContent = "Incorrect Username and password";
+
+        usernameInput.value = "";
+        passwordInput.value = "";
+
+        usernameInput.focus();
     }    
 });
 
 
 document.getElementById("signupForm").addEventListener("submit", function (e) {
     e.preventDefault();
-
+    let isValid = true;
     // Get form input values
     const firstName = document.getElementById("firstName").value.trim();
     const lastName = document.getElementById("lastName").value.trim();
     const email = document.getElementById("signupEmail").value.trim();
     const username = document.getElementById("signupUsername").value.trim();
     const password = document.getElementById("signupPassword").value;
+    const fnameError = document.getElementById('fnameError');
+    const lnameError = document.getElementById('lnameError');
+    const unameError = document.getElementById('unameError');
+    const emailError = document.getElementById('emailError');
+    const passwordError = document.getElementById('passwordError');
 
 
     if (!email.endsWith("@dlsu.edu.ph")) {
-    alert(" Email must be a valid DLSU email ending in @dlsu.edu.ph");
-    return;
-  }
+      emailError.textContent = "Email must be a dlsu email";
+      isValid = false;
+        
+    }else{
+        emailError.textContent = "";
+
+    }
+
+
+    if (username.length < 2) {
+      unameError.textContent = "Username must consist of 3 or more characters";
+        isValid = false;
+        
+    }else{
+        unameError.textContent = "";
+
+    }
+
+    if (password.length < 2) {
+      passwordError.textContent = "password must consist of 3 or more characters";
+        isValid = false;
+        
+    }else{
+        passwordError.textContent = "";
+
+    }
+
+    const nameRegex = /^[A-Za-z]+$/;
+
+    // check first name
+    if (!nameRegex.test(firstName)) {
+      fnameError.textContent = "First name can only contain letters A - Z";
+        isValid = false;
+        
+    }else{
+        fnameError.textContent = "";
+
+    }
+    //check last name
+    if (!nameRegex.test(lastName)) {
+      lnameError.textContent = "Last name can only contain letters A - Z";
+        isValid = false;
+        
+    }else{
+        lnameError.textContent = "";
+
+    }
+
+    if (!isValid) return;
     // Check if username already exists
     const exists = users.some(user => user.username === username);
 
@@ -68,9 +128,12 @@ document.getElementById("signupForm").addEventListener("submit", function (e) {
             password
     });
 
+
+    
     saveUsers(); // Save to localStorage
     alert("User registered! You can now log in.");
     e.target.reset(); // Clear the form
     window.location.href = "login.html";
-    }
+    
+  }
 });
