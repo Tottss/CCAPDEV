@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Lab Reservation Login</title>
+
+        <!--tailwind CSS via CDN (for prototyping only)-->
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+
+    <body class="flex items-center justify-center min-h-screen bg-gray-100">
+
+        <div class="flex flex-col items-center space-y-6">
+            <div class="space-y-4">
+                <!--row 1-->
+                <div class="flex justify-center gap-16">
+                    <!--group 1-->
+                    <div class="flex gap-2">
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">A1</button>
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">A2</button>
+                    </div>
+
+                    <!--group 2-->
+                    <div class="flex gap-2">
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">A3</button>
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">A4</button>
+                    </div>
+
+                    <!--group 3-->
+                    <div class="flex gap-2">
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">A5</button>
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">A6</button>
+                    </div>
+                </div>
+
+                <!--row 2-->
+                <div class="flex justify-center gap-16">
+                    <!--group 1-->
+                    <div class="flex gap-2">
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">B1</button>
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">B2</button>
+                    </div>
+
+                    <!--group 2-->
+                    <div class="flex gap-2">
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">B3</button>
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">B4</button>
+                    </div>
+
+                    <!--group 3-->
+                    <div class="flex gap-2">
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">B5</button>
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">B6</button>
+                    </div>
+                </div>
+
+                <!--aisle space-->
+                <div class="h-8"></div>
+
+                <!--row 3-->
+                <div class="flex justify-center gap-16">
+                    <!--group 1-->
+                    <div class="flex gap-2">
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">C1</button>
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">C2</button>
+                    </div>
+
+                    <!--group 2-->
+                    <div class="flex gap-2">
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">C3</button>
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">C4</button>
+                    </div>
+
+                    <!--group 3-->
+                    <div class="flex gap-2">
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">C5</button>
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">C6</button>
+                    </div>
+                </div>
+
+                <!--row 4-->
+                <div class="flex justify-center gap-16">
+                    <!--group 1-->
+                    <div class="flex gap-2">
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">D1</button>
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">D2</button>
+                    </div>
+
+                    <!--group 2-->
+                    <div class="flex gap-2">
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">D3</button>
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">D4</button>
+                    </div>
+
+                    <!--group 3-->
+                    <div class="flex gap-2">
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">D5</button>
+                        <button class="w-10 h-10 bg-gray-300 rounded hover:bg-gray-400">D6</button>
+                    </div>
+                </div>
+            </div>
+
+            <button id="reserveButton" class="mt-10 bg-green-900 hover:bg-green-800 text-white px-6 py-2 rounded">Reserve</button>
+        </div>
+
+        <script>
+            const seats = document.querySelectorAll('button'); // get all seat buttons
+
+            seats.forEach(button => {
+                if (button.id !== 'reserveButton') { // doesn't include reserve button
+                    button.addEventListener('click', () => {
+                        button.classList.toggle('bg-green-800');
+                        button.classList.toggle('text-white');
+                    });
+                }
+            });
+        </script>
+    </body>
+</html>
+<!--4 seats per table, 6 tables, so 24 seats-->
