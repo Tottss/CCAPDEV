@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab Reservation</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-white font-sans">
+  <header class="h-24 text-white p-8 flex justify-between items-center" style="background-color: #133301;">
+    <h1 class="text-4xl">
+        <span class="font-bold">LAB</span><span class="font-extralight">RESERVATION</span>
+    </h1>
+    <nav class="space-x-40">
+      <a href="#" class="hover:underline text-2xl ml-10">Reserve Seat</a>
+      <a href="#" class="hover:underline text-2xl mr-10">Your Reservations</a>
+    </nav>
+    <div>
+      <img src="user.jpg" alt="User" class="w-20 h-20 rounded-full" />
+    </div>
+  </header>
+
+  <div class="flex justify-center space-x-2 mt-6">
+    <button class="px-4 py-2 bg-green-100 rounded-full">G201</button>
+    <button class="px-4 py-2 bg-green-600 text-white rounded-full">G202</button>
+    <button class="px-4 py-2 bg-green-100 rounded-full">G203</button>
+    <button class="px-4 py-2 bg-green-100 rounded-full">G204</button>
+    <button class="px-4 py-2 bg-green-100 rounded-full">G205</button>
+    <button class="px-4 py-2 bg-green-100 rounded-full">G206</button>
+  </div>
+
+  <div class="max-w-6xl mx-auto mt-10 grid grid-cols-3 gap-10">
+    <div class="bg-green-100 p-6 rounded">
+      <h2 class="font-bold text-lg mb-4">YOUR SLOTS</h2>
+      <ul id="slotList" class="space-y-2"></ul>
+      <button id="confirmBtn" class="mt-4 w-full bg-green-700 text-white py-2 rounded hover:bg-green-800">CONFIRM RESERVATION</button>
+    </div>
+
+    <div class="col-span-2">
+      <div class="flex items-center mb-4">
+        <label for="date" class="mr-2 font-semibold">DATE:</label>
+        <input type="date" id="date" value="2025-07-20" class="border border-gray-300 px-2 py-1 rounded" />
+      </div>
+
+      <h2 class="text-xl font-bold mb-4">G202 COMPUTER LABORATORY<br /><span class="text-gray-600 text-sm">Sunday 20th July</span></h2>
+
+      <div class="overflow-x-auto">
+        <table class="min-w-full border" id="timeSlots">
+          <thead>
+            <tr class="bg-green-800 text-white">
+              <th class="px-4 py-2">Time</th>
+              <th class="px-4 py-2">Lab Cap</th>
+              <th class="px-4 py-2">Reserved</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <tr class="cursor-pointer hover:bg-green-200" data-time="0730 - 0800" data-reserved="23">
+              <td class="px-4 py-2 text-blue-600">0730 - 0800</td>
+              <td>23</td>
+              <td>23</td>
+            </tr>
+            <tr class="cursor-pointer hover:bg-green-200" data-time="0815 - 0845" data-reserved="0">
+              <td class="px-4 py-2">0815 - 0845</td>
+              <td>23</td>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="mt-2 text-sm">
+        <span class="text-blue-600">BLUE</span> - Closed Lab<br>
+        <span class="text-black">BLACK</span> - Open Lab
+      </div>
+    </div>
+  </div>
+
+  <script src="labReservation.js"></script>
+</body>
+
+</html>
