@@ -27,5 +27,23 @@ document.addEventListener("DOMContentLoaded", () => {
   
 
   // For testing: add a sample slot
-  addSlot("G202", "0815 - 0845", "07/20/25");
+  addSlot("G202", "0815 - 0845", "A1", );
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const dateInput = document.getElementById("date");
+
+  // Get today's date
+  const today = new Date();
+
+  // Format date as YYYY-MM-DD
+  const formatDate = (date) => date.toISOString().split("T")[0];
+
+  // Set min to today
+  dateInput.min = formatDate(today);
+
+  // Set max to 7 days from today
+  const oneWeekLater = new Date();
+  oneWeekLater.setDate(today.getDate() + 7);
+  dateInput.max = formatDate(oneWeekLater);
 });
