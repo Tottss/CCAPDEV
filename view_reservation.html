@@ -5,36 +5,77 @@
     <title>View Lab Reservation</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-
-<div class="flex flex-col gap-6 py-6 px-15 bg-gray-100 min-h-screen">
+<body>
     <!-- header -->
-
-    <!-- tab buttons -->
-    <div class="flex justify-start mb-4">
-        <div class="flex gap-4 bg-gray-200 rounded-lg">
-            <button class="bg-white text-black font-semibold px-4 py-1 rounded-full shadow">Upcoming</button>
-            <button class="text-gray-400 font-semibold px-4 py-1 rounded-full">Past</button>
-            <button class="text-gray-400 font-semibold px-4 py-1 rounded-full">Cancelled</button>
+    <header class="h-24 text-white p-8 flex justify-between items-center" style="background-color: #133301;">
+        <h1 class="text-4xl">
+            <span class="font-bold">LAB</span><span class="font-extralight">RESERVATION</span>
+        </h1>
+        <nav class="space-x-40">
+        <a href="#" class="hover:underline text-2xl ml-10">Reserve Seat</a>
+        <a href="#" class="hover:underline text-2xl mr-10">Your Reservations</a>
+        </nav>
+        <div>
+        <img src="user.jpg" alt="User" class="w-20 h-20 rounded-full" />
         </div>
-    </div>
+    </header>
 
-    <div class="flex flex-col gap-4">
-        <!-- date div -->
-        <div class="text-2xl font-semibold text-gray-700">June 2025</div>
+    <div class="flex flex-col gap-6 py-6 px-15 bg-gray-100 min-h-screen">
+        <!-- tab buttons -->
+        <div class="flex justify-start mb-4 mx-10">
+            <div class="flex gap-4 bg-gray-200 rounded-lg">
+                <button class="bg-white text-black font-semibold px-4 py-1 rounded-full shadow">Upcoming</button>
+                <button class="text-gray-400 font-semibold px-4 py-1 rounded-full">Past</button>
+                <button class="text-gray-400 font-semibold px-4 py-1 rounded-full">Cancelled</button>
+            </div>
+        </div>
 
-        <!-- reservation box -->
-        <div class="flex items-center justify-between bg-white p-4 rounded-lg shadow">
-            <div class="flex gap-6 items-center">
-                <div class="text-center">
-                    <div class="text-sm text-gray-600">Mon</div>
-                    <div class="text-3xl text-green-600 font-bold">9</div>
+        <!-- list of reservations per month -->
+        <div class="flex flex-col gap-4">
+            <!-- date div -->
+            <h2 class="text-2xl font-semibold text-gray-700 mx-10">June 2025</h2>
+
+            <!-- reservation box -->
+            <div class="flex items-center justify-between bg-white p-4 mx-15 rounded-lg shadow">
+                <!-- left side -->
+                <div class="flex gap-6 items-center">
+                    <div class="text-center">
+                        <p class="text-sm text-gray-600">Mon</p>
+                        <h3 class="text-3xl text-green-600 font-bold">9</h3>
+                    </div>
+
+                    <div class="w-px h-15 bg-gray-300"></div> <!-- the gray line thing -->
+
+                    <!-- time and room-->
+                    <div class="text-sm text-gray-800">
+                        <p>09:00-10:30 AM</p>
+                        <p class="text-gray-500">G202</p>
+                    </div>
+
+                    <!--seat no and pfps-->
+                    <div class="text-sm text-sm text-gray-800 mx-20">
+                        <p>Seat No. A12-A14</p>
+                        <p>Person A, Person B, Person C</p>
+                    </div>
                 </div>
 
-                <div class="text-sm text-gray-800">
-                    <div>09:00-10:30 AM</div>
-                    <div class="text-gray-500">G202</div>
+                <!-- right side-->
+                <div class="flex gap-6 items-end items-center">
+
+                    <!--request date and owner-->
+                    <div class="flex flex-col text-sm text-sm text-gray-800 mx-20 gap-y-2">
+                        <!--@apply this later-->
+                        <p class="bg-green-100 rounded-full px-2 text-xs font-semibold text-center">Requested 06/02/2025</p>
+                        <p class="bg-green-100 rounded-full px-2 text-xs font-semibold text-center">Juan Dela Cruz</p>
+                    </div>
+
+                    <!-- dropdown thing -->
+                    <button class="bg-gray-100 px-3 py-1 rounded-md text-sm shadow-sm hover:bg-green-100 self-center">
+                    Edit this reservation
+                    </button>
                 </div>
+
             </div>
         </div>
     </div>
-</div>
+</body>
