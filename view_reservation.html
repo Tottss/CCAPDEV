@@ -5,3 +5,36 @@
     <title>View Lab Reservation</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
+
+<div class="flex flex-col gap-6 py-6 px-15 bg-gray-100 min-h-screen">
+    <!-- header -->
+
+    <!-- tab buttons -->
+    <div class="flex justify-start mb-4">
+        <div class="flex gap-4 bg-gray-200 rounded-lg">
+            <button class="bg-white text-black font-semibold px-4 py-1 rounded-full shadow">Upcoming</button>
+            <button class="text-gray-400 font-semibold px-4 py-1 rounded-full">Past</button>
+            <button class="text-gray-400 font-semibold px-4 py-1 rounded-full">Cancelled</button>
+        </div>
+    </div>
+
+    <div class="flex flex-col gap-4">
+        <!-- date div -->
+        <div class="text-2xl font-semibold text-gray-700">June 2025</div>
+
+        <!-- reservation box -->
+        <div class="flex items-center justify-between bg-white p-4 rounded-lg shadow">
+            <div class="flex gap-6 items-center">
+                <div class="text-center">
+                    <div class="text-sm text-gray-600">Mon</div>
+                    <div class="text-3xl text-green-600 font-bold">9</div>
+                </div>
+
+                <div class="text-sm text-gray-800">
+                    <div>09:00-10:30 AM</div>
+                    <div class="text-gray-500">G202</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
