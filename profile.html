@@ -33,20 +33,46 @@
 
         <main class="container mx-auto px-4 py-8 flex flex-col md:flex-row gap-8 items-center min-h-[calc(100vh-12rem)]">
 
-            <div class="bg-white rounded-lg shadow-md p-8 md:w-1/3"> <!--profile picture-->
-                <h2 class="text-3x1 font-bold mb-6">User Profile</h2>
-                <div class="space-y-6 text-x1">
-                    <div>
-                        <label class="block text-lg font-medium text-gray-700">Date</label>
-                        <p id="reservation-date" class="mt-2 text-xl">June 18, 2025</p>
-                    </div>
-                    <button id="editPfp" class="mt-10 bg-gray-200 hover:bg-gray-100 text-black px-6 py-2 rounded-lg text-lg font-medium">Edit Profile Picture</button>
-                </div>
-            </div>
-
             <div class="bg-white rounded-lg shadow-md p-10 flex-1 flex flex-col justify-center">
-                <h2 class="text-2x1 font-bold mb-10">Select your Seat</h2>
-                
+                <!--header and edit profile button-->
+                <div class="flex justify-between items-start mb-10">
+                    <h2 class="text-4xl font-bold mb-10">User Profile</h2>
+                    <button id="editProfile" class="mt-10 bg-gray-200 hover:bg-gray-100 text-black px-6 py-2 rounded-lg text-lg font-medium justify-center">Edit Profile</button>
+                </div>
+
+                <!--flex container for profile picture section-->
+                <div class="flex flex-col md:flex-row gap-10 mb-10">
+                    
+                    <div class="flex flex-col items-center gap-4">
+                        <div class="relative">
+                            <img src="user.jpg" alt="User" class="w-36 h-36 rounded-full" />
+                        </div>
+                        <button id="editPfp" class="mt-10 bg-gray-200 hover:bg-gray-100 text-black px-6 py-2 rounded-lg text-lg font-medium justify-center">Edit Profile Picture</button>
+                    </div>
+
+                    <!--profile details-->
+                    <div class="flex-1 space-y-8">
+                        <div>
+                            <label class="block text-lg font-medium text-gray-700">Name Pronunciation</label>
+                            <p id="namePronunciation" class="mt-2 text-xl">No name pronunciation provided</p>
+                        </div>
+
+                        <div>
+                            <label class="block text-lg font-medium text-gray-700">Contact</label>
+                            <p id="contact" class="mt-2 text-xl">No registered services, you can add some on the settings page.</p>
+                        </div>
+
+                        <div>
+                            <label class="block text-lg font-medium text-gray-700">Biography</label>
+                            <p id="biography" class="mt-2 text-xl">No biography has been added</p>
+                        </div>
+
+                        <div>
+                            <label class="block text-lg font-medium text-gray-700">Links</label>
+                            <p id="links" class="mt-2 text-xl">No links have been added</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
 
