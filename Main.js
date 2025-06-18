@@ -12,12 +12,58 @@ let currentDate = new Date().toISOString().split("T")[0];
 const roomData = {
   G201: {
     "2025-06-18": [
-      { time: "0730 - 0800", cap: 20, reserved: 5 },
-      { time: "0900 - 0930", cap: 20, reserved: 12 }
+      { time: "0730 - 0800", cap: 20, reserved: 20 },
+      { time: "0800 - 0830", cap: 20, reserved: 20 },
+      { time: "0830 - 0900", cap: 20, reserved: 20 },
+      { time: "0900 - 0930", cap: 20, reserved: 12 },
+      { time: "0930 - 1000", cap: 20, reserved: 6 },
+      { time: "1000 - 1030", cap: 20, reserved: 9 },
+      { time: "1030 - 1100", cap: 20, reserved: 13 },
+      { time: "1100 - 1130", cap: 20, reserved: 7 },
+      { time: "1130 - 1200", cap: 20, reserved: 11 },
+      { time: "1200 - 1230", cap: 20, reserved: 4 },
+      { time: "1230 - 1300", cap: 20, reserved: 15 },
+      { time: "1300 - 1330", cap: 20, reserved: 3 },
+      { time: "1330 - 1400", cap: 20, reserved: 9 },
+      { time: "1400 - 1430", cap: 20, reserved: 5 },
+      { time: "1430 - 1500", cap: 20, reserved: 14 },
+      { time: "1500 - 1530", cap: 20, reserved: 6 },
+      { time: "1530 - 1600", cap: 20, reserved: 8 },
+      { time: "1600 - 1630", cap: 20, reserved: 2 },
+      { time: "1630 - 1700", cap: 20, reserved: 10 },
+      { time: "1700 - 1730", cap: 20, reserved: 12 },
+      { time: "1730 - 1800", cap: 20, reserved: 7 },
+      { time: "1800 - 1830", cap: 20, reserved: 4 },
+      { time: "1830 - 1900", cap: 20, reserved: 13 },
+      { time: "1900 - 1930", cap: 20, reserved: 9 },
+      { time: "1930 - 2000", cap: 20, reserved: 6 }
     ],
     default: [
-      { time: "0730 - 0800", cap: 20, reserved: 10 },
-      { time: "0900 - 0930", cap: 20, reserved: 6 }
+      { time: "0730 - 0800", cap: 20, reserved: 20 },
+      { time: "0800 - 0830", cap: 20, reserved: 20 },
+      { time: "0830 - 0900", cap: 20, reserved: 20 },
+      { time: "0900 - 0930", cap: 20, reserved: 12 },
+      { time: "0930 - 1000", cap: 20, reserved: 6 },
+      { time: "1000 - 1030", cap: 20, reserved: 9 },
+      { time: "1030 - 1100", cap: 20, reserved: 13 },
+      { time: "1100 - 1130", cap: 20, reserved: 7 },
+      { time: "1130 - 1200", cap: 20, reserved: 11 },
+      { time: "1200 - 1230", cap: 20, reserved: 4 },
+      { time: "1230 - 1300", cap: 20, reserved: 15 },
+      { time: "1300 - 1330", cap: 20, reserved: 3 },
+      { time: "1330 - 1400", cap: 20, reserved: 9 },
+      { time: "1400 - 1430", cap: 20, reserved: 5 },
+      { time: "1430 - 1500", cap: 20, reserved: 14 },
+      { time: "1500 - 1530", cap: 20, reserved: 6 },
+      { time: "1530 - 1600", cap: 20, reserved: 8 },
+      { time: "1600 - 1630", cap: 20, reserved: 2 },
+      { time: "1630 - 1700", cap: 20, reserved: 10 },
+      { time: "1700 - 1730", cap: 20, reserved: 12 },
+      { time: "1730 - 1800", cap: 20, reserved: 7 },
+      { time: "1800 - 1830", cap: 20, reserved: 4 },
+      { time: "1830 - 1900", cap: 20, reserved: 13 },
+      { time: "1900 - 1930", cap: 20, reserved: 9 },
+      { time: "1930 - 2000", cap: 20, reserved: 6 }
     ]
   },
   G202: {
@@ -26,7 +72,6 @@ const roomData = {
       { time: "1030 - 1100", cap: 23, reserved: 19 }
     ],
     default: [
-      { time: "0730 - 0800", cap: 23, reserved: 23 },
       { time: "0815 - 0845", cap: 23, reserved: 0 },
       { time: "1030 - 1100", cap: 23, reserved: 19 }
     ]
@@ -48,7 +93,8 @@ function updateRoomDisplay() {
 
   slots.forEach(slot => {
     const row = document.createElement('tr');
-    row.className = `cursor-pointer bg-[#A2F1B6] hover:bg-lime-50`;
+    const isFull = slot.reserved >= slot.cap;
+    row.className = `cursor-pointer ${isFull ? 'text-blue-500' : 'text-black'} bg-[#A2F1B6] hover:bg-lime-50`;
     row.innerHTML = `
       <td class="font-bold px-4 py-2 border border-white">${slot.time}</td>
       <td class="font-bold border border-white">${slot.cap}</td>
