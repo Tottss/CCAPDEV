@@ -358,7 +358,7 @@ function updateRoomDisplay() {
         date: dateDisplay
       });
 
-      // 🔽 NEW: choose destination based on current page
+      
       const isAdmin = window.location.pathname.includes("adminmain.html");
       const destination = isAdmin ? "adminSeating.html" : "seating.html";
 
