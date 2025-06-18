@@ -31,33 +31,50 @@
 
         <main class="container mx-auto px-4 py-8 flex flex-col md:flex-row gap-8 items-center min-h-[calc(100vh-12rem)]">
 
-            <div class="bg-white rounded-lg shadow-md p-8 md:w-1/3"> <!--reservation details-->
-                <h2 class="text-3x1 font-bold mb-6">Reservation Details</h2>
-                <div class="space-y-6 text-x1">
-                    <div>
-                        <label class="block text-lg font-medium text-gray-700">Date</label>
-                        <p id="reservation-date" class="mt-2 text-xl">June 18, 2025</p>
-                    </div>
+            <div class="md:w-1/3 flex flex-col gap-8">
 
-                    <div>
-                        <label class="block text-lg font-medium text-gray-700">Time</label>
-                        <p id="reservation-time" class="mt-2 text-xl">9:00 AM - 11:00 AM</p>
+                <!--inputting student name-->
+                <div class="bg-white rounded-lg shadow-md p-10">
+                    <h2 class="text-3xl font-bold mb-6">Student</h2>
+                    <div class="space-y-6 text-xl">
+                        <div>
+                            <label class="block text-lg font-medium text-gray-700">Input Student Name</label><br>
+                            <input type="text" id="studentName" placeholder="Student Name"
+                                class="w-full px-4 py-2 bg-gray-100 border border-black rounded-lg text-black placeholder-black focus:outline-none focus:ring-2 focus:ring-black" />
+                                <span id="Error" class="text-red-500 text-sm"></span>
+                        </div>
                     </div>
+                </div>
 
-                    <div>
-                        <label class="block text-lg font-medium text-gray-700">Room Number</label>
-                        <p id="reservation-room" class="mt-2 text-xl">G302A</p>
-                    </div>
+                <!--reservation details-->
+                <div class="bg-white rounded-lg shadow-md p-10">
+                    <h2 class="text-3xl font-bold mb-6">Reservation Details</h2>
+                    <div class="space-y-6 text-xl">
+                        <div>
+                            <label class="block text-lg font-medium text-gray-700">Date</label>
+                            <p id="reservation-date" class="mt-2 text-xl">June 18, 2025</p>
+                        </div>
 
-                    <div>
-                        <label class="block text-lg font-medium text-gray-700">Professor</label>
-                        <p id="reservation-professor" class="mt-2 text-xl">Danny Cheng</p>
+                        <div>
+                            <label class="block text-lg font-medium text-gray-700">Time</label>
+                            <p id="reservation-time" class="mt-2 text-xl">9:00 AM - 11:00 AM</p>
+                        </div>
+
+                        <div>
+                            <label class="block text-lg font-medium text-gray-700">Room Number</label>
+                            <p id="reservation-room" class="mt-2 text-xl">G302A</p>
+                        </div>
+
+                        <div>
+                            <label class="block text-lg font-medium text-gray-700">Professor</label>
+                            <p id="reservation-professor" class="mt-2 text-xl">Danny Cheng</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="bg-white rounded-lg shadow-md p-10 flex-1 flex flex-col justify-center">
-                <h2 class="text-2x1 font-bold mb-10">Select your Seat</h2>
+                <h2 class="text-2xl font-bold mb-10">Select your Seat</h2>
                 <div class="flex justify-center">
                     <div class="space-y-4 scale-100 transform origin-center"> <!--seat layout-->
                         <!--row 1-->
