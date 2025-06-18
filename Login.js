@@ -77,7 +77,7 @@ document.querySelector("form").addEventListener("submit", function (e) { // logi
     const username = usernameInput.value.trim();
     const password = passwordInput.value;
     // checks if there's a user in the user array
-    const userFound = users.some(user => user.username === username && user.password === password);
+    const userFound = users.find(user => user.username === username && user.password === password);
 
    
     if (userFound) {
