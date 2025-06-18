@@ -13,10 +13,10 @@
         <header class="h-24 p-8 flex justify-between items-center text-white" style="background-color: #133301;">
             <h1 class="text-4xl"><span class="font-bold">LAB</span><span class="font-extralight">RESERVATION</span></h1>
             <nav class="space-x-40 text-2xl">
-                <a href="main.html" class="hover:underline ml-10">Reserve Seat</a>
-                <a href="view_reservation.html" class="hover:underline mr-10">Your Reservations</a>
+                <a href="adminmain.html" class="hover:underline ml-10">Reserve Seat</a>
+                <a href="#" class="hover:underline mr-10">Your Reservations</a>
             </nav>
-            <img src="user.jpg" alt="User" class="w-20 h-20 rounded-full" />
+            <h2 class="text-4xl"><span class="font-bold">ADMIN MODE</span></h2>
         </header>
 
         <main class="container mx-auto px-4 py-8 flex flex-col md:flex-row gap-8 items-center min-h-[calc(100vh-12rem)]">
@@ -182,7 +182,7 @@
                             </div>
                         </div>
                         <div class="flex justify-center mt-8">
-                            <button id="reserveButton" class="mt-10 bg-green-900 hover:bg-green-800 text-white px-6 py-2 rounded-lg text-lg font-medium">Reserve</button>
+                            <button id="saveButton" class="mt-10 bg-green-900 hover:bg-green-800 text-white px-6 py-2 rounded-lg text-lg font-medium">Save Edits</button>
                         </div>
                     </div>
                 </div>
@@ -193,7 +193,7 @@
             const seats = document.querySelectorAll('button'); // get all seat buttons
 
             seats.forEach(button => {
-                if (button.id !== 'reserveButton') { // doesn't include reserve button
+                if (button.id !== 'saveButton') { // doesn't include reserve button
                     button.addEventListener('click', () => {
                         button.classList.toggle('bg-green-800');
                         button.classList.toggle('text-white');
