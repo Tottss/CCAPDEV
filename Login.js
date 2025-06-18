@@ -37,6 +37,13 @@ if (!users || users.length === 0) {
       email: "evan.tan@dlsu.edu.ph",
       username: "evan",
       password: "evan123"
+    },
+    {
+      firstName: "Admin",
+      lastName: " Admin",
+      email:"admin@dlsu.edu.ph",
+      username: "Admin",
+      password: "1234"
     }
   ];
 
@@ -82,7 +89,11 @@ document.querySelector("form").addEventListener("submit", function (e) { // logi
         else {
             localStorage.removeItem("rememberedUser");
         }
+        if (userFound.username === "Admin"){
+          window.location.href = "adminmain.html";
+        }else{
         window.location.href = "main.html";
+        }
     } else {
         Error.textContent = "Incorrect Username and password";
 
