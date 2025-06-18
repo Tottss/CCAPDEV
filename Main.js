@@ -12,8 +12,8 @@ let currentDate = new Date().toISOString().split("T")[0];
 const roomData = {
   G201: {
     "2025-06-18": [
-      { time: "0730 - 0800", cap: 20, reserved: 5 },
-      { time: "0900 - 0930", cap: 20, reserved: 12 }
+      { time: "0730 - 0800", cap: 20, reserved: 20 },
+      { time: "0900 - 0930", cap: 20, reserved: 20 }
     ],
     default: [
       { time: "0730 - 0800", cap: 20, reserved: 10 },
@@ -48,7 +48,8 @@ function updateRoomDisplay() {
 
   slots.forEach(slot => {
     const row = document.createElement('tr');
-    row.className = `cursor-pointer bg-[#A2F1B6] hover:bg-lime-50`;
+    const isFull = slot.reserved >= slot.cap;
+    row.className = `cursor-pointer ${isFull ? 'text-blue-500' : 'text-black'} bg-[#A2F1B6] hover:bg-lime-50`;
     row.innerHTML = `
       <td class="font-bold px-4 py-2 border border-white">${slot.time}</td>
       <td class="font-bold border border-white">${slot.cap}</td>
