@@ -2,7 +2,7 @@ const reservationData = {
     date: "June 18, 2025",
     time: "9:00 A.M. - 11:00 A.M.",
     room: "G302A",
-    professor: "Sir Cheng"
+    professor: "Danny Cheng"
 };
 
 document.getElementById('reservation-date').textContent = reservationData.date;
