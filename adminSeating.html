@@ -13,10 +13,10 @@
         <header class="h-24 p-8 flex justify-between items-center text-white" style="background-color: #133301;">
             <h1 class="text-4xl"><span class="font-bold">LAB</span><span class="font-extralight">RESERVATION</span></h1>
             <nav class="space-x-40 text-2xl">
-                <a href="main.html" class="hover:underline ml-10">Reserve Seat</a>
-                <a href="view_reservation.html" class="hover:underline mr-10">Your Reservations</a>
+                <a href="adminmain.html" class="hover:underline ml-10">Reserve Seat</a>
+                <a href="#" class="hover:underline mr-10">Your Reservations</a>
             </nav>
-            <img src="user.jpg" alt="User" class="w-20 h-20 rounded-full" />
+            <h2 class="text-4xl"><span class="font-bold">ADMIN MODE</span></h2>
         </header>
 
         <main class="container mx-auto px-4 py-8 flex flex-col md:flex-row gap-8 items-center min-h-[calc(100vh-12rem)]">
@@ -182,7 +182,7 @@
                             </div>
                         </div>
                         <div class="flex justify-center mt-8">
-                            <button id="reserveButton" class="mt-10 bg-green-900 hover:bg-green-800 text-white px-6 py-2 rounded-lg text-lg font-medium">Reserve</button>
+                            <button id="saveButton" class="mt-10 bg-green-900 hover:bg-green-800 text-white px-6 py-2 rounded-lg text-lg font-medium">Save Edits</button>
                         </div>
                     </div>
                 </div>
@@ -190,43 +190,18 @@
         </main>
 
         <script>
-            const seats = document.querySelectorAll('button');
+            const seats = document.querySelectorAll('button'); // get all seat buttons
 
-            let selectedSeat = null;
             seats.forEach(button => {
-                if (button.id !== 'reserveButton') {
+                if (button.id !== 'saveButton') { // doesn't include reserve button
                     button.addEventListener('click', () => {
-                        seats.forEach(btn => {
-                            if (btn.id !== 'reserveButton') {
-                                btn.classList.remove('bg-green-800', 'text-white');
-                            }
-                        });
-
-                        button.classList.add('bg-green-800', 'text-white');
-                        selectedSeat = button.id;
+                        button.classList.toggle('bg-green-800');
+                        button.classList.toggle('text-white');
                     });
                 }
-            });
-
-            document.getElementById('reserveButton').addEventListener('click', () => {
-                if (!selectedSeat) {
-                    alert("Please select a seat.");
-                    return;
-                }
-
-                const lab = "G202";
-                const time = "0815 - 0845";
-                const date = "2025-06-18"; 
-
-                const query = new URLSearchParams({
-                    lab,
-                    time,
-                    date,
-                    seat: selectedSeat
-                }).toString();
-
-                window.location.href = `main.html?${query}`;
             });
         </script>
     </body>
 </html>
+<!--4 seats per table, 9 tables (9th table has only 3 seats), so 34 seats-->
+<!--date, time, room no., prof name-->

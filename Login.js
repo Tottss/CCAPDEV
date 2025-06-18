@@ -72,6 +72,7 @@ document.querySelector("form").addEventListener("submit", function (e) { // logi
     // checks if there's a user in the user array
     const userFound = users.some(user => user.username === username && user.password === password);
 
+   
     if (userFound) {
         if (rememberMe) {
             localStorage.setItem("rememberedUser", JSON.stringify({ username, password }));
