@@ -204,19 +204,29 @@
         <script>
             const seats = document.querySelectorAll('button');
             const selectedSeats = new Set();
+
+            const reservedSeats = new Set(['A5', 'A6', 'C1', 'C2', 'D1', 'D5', 'D6', 'E3', 'E4']);
             
             seats.forEach(button => {
                 if (button.id !== 'reserveButton') {
-                    button.addEventListener('click', () => {
-                        // toggle seat selection
-                        button.classList.toggle('bg-green-800');
-                        button.classList.toggle('text-white');
+                    // mark the already reserved seats
+                    if (reservedSeats.has(button.id)) {
+                        button.classList.add('bg-red-500', 'text-white', 'cursor-not-allowed');
+                        button.disabled = true;
+                    }
 
-                        if (button.classList.contains('bg-green-800')) {
-                            selectedSeats.add(button.id); // add selected seats
-                        }
-                        else {
-                            selectedSeats.delete(button.id);  // remove seats
+                    button.addEventListener('click', () => {
+                        if (!reservedSeats.has(button.id)) {
+                            // toggle seat selection
+                            button.classList.toggle('bg-green-800');
+                            button.classList.toggle('text-white');
+
+                            if (button.classList.contains('bg-green-800')) {
+                                selectedSeats.add(button.id); // add selected seats
+                            }
+                            else {
+                                selectedSeats.delete(button.id);  // remove seats
+                            }
                         }
                     });
                 }
@@ -224,7 +234,7 @@
 
             document.getElementById('reserveButton').addEventListener('click', () => {
                 if (selectedSeats.size === 0) {
-                    alert("Please select at least one seat.");
+                    alert("Please select at least one available seat.");
                     return;
                 }
 
