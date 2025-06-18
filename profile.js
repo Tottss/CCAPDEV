@@ -1,7 +1,17 @@
-let loggedIn = JSON.parse(localStorage.getItem("loggedIn")) || [];
+document.addEventListener("DOMContentLoaded", () => {
+    const loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
 
-let firstName = loggedIn.firstName;
-let lastName = loggedIn.lastName;
-let fullName = firstName + " " + lastName;
+    console.log(loggedIn);
+    if (loggedIn) {
+      const firstName = loggedIn.firstName;
+      const lastName = loggedIn.lastName;
+      const fullName = firstName + " " + lastName;
 
-document.getElementById("name").textContent = fullName;
+      // Set name label
+      console.log(fullName);
+      document.getElementById("name").textContent = fullName;
+    } else {
+      // Optional: Redirect to login page if not logged in
+      window.location.href = "login.html";
+    }
+  });

@@ -1,5 +1,5 @@
 let users = JSON.parse(localStorage.getItem("users")) || []; // user data retrieval from storage
-let loggedIn = JSON.parse(localStorage.getItem("loggedIn")) || [];
+let loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
 
 if (!users || users.length === 0) {
   users = [
