@@ -1,5 +1,5 @@
 let users = JSON.parse(localStorage.getItem("users")) || []; // user data retrieval from storage
-
+let loggedIn = JSON.parse(localStorage.getItem("loggedIn")) || [];
 
 if (!users || users.length === 0) {
   users = [
@@ -74,8 +74,10 @@ document.querySelector("form").addEventListener("submit", function (e) { // logi
 
    
     if (userFound) {
+      localStorage.setItem("loggedIn",JSON.stringify(userFound));
         if (rememberMe) {
             localStorage.setItem("rememberedUser", JSON.stringify({ username, password }));
+            
         }
         else {
             localStorage.removeItem("rememberedUser");
