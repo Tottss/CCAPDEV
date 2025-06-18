@@ -71,7 +71,11 @@ function updateRoomDisplay() {
         date: dateDisplay
       });
 
-      window.location.href = `seating.html?${params.toString()}`;
+      // 🔽 NEW: choose destination based on current page
+      const isAdmin = window.location.pathname.includes("adminmain.html");
+      const destination = isAdmin ? "adminSeating.html" : "seating.html";
+
+      window.location.href = `${destination}?${params.toString()}`;
     });
 
     timeSlotsTable.appendChild(row);
