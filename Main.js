@@ -9,6 +9,10 @@ const scrollContainer = document.getElementById("slotScroll");
 let currentRoom = "G201";
 let currentDate = new Date().toISOString().split("T")[0];
 
+document.getElementById('confirmBtn').addEventListener('click', function () {
+  window.location.href = 'login.html';
+});
+
 const roomData = {
   G201: {
     "2025-06-18": [
@@ -367,7 +371,8 @@ function updateRoomDisplay() {
 
 function addSlot(lab, time, date, seat) {
   const li = document.createElement("li");
-  li.className = "flex items-center px-3 py-2 rounded bg-white";
+  li.className = "flex items-center px-3 py-2 rounded";
+  li.style="background-color: #A2F1B6;"
 
   const removeBtn = document.createElement("span");
   removeBtn.className = "text-[#A2F1B6] bg-white rounded-full w-5 h-5 flex items-center justify-center text-sm font-bold mr-2 cursor-pointer";
