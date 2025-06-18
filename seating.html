@@ -203,38 +203,42 @@
 
         <script>
             const seats = document.querySelectorAll('button');
-
-            let selectedSeat = null;
+            const selectedSeats = new Set();
+            
             seats.forEach(button => {
                 if (button.id !== 'reserveButton') {
                     button.addEventListener('click', () => {
-                        seats.forEach(btn => {
-                            if (btn.id !== 'reserveButton') {
-                                btn.classList.remove('bg-green-800', 'text-white');
-                            }
-                        });
+                        // toggle seat selection
+                        button.classList.toggle('bg-green-800');
+                        button.classList.toggle('text-white');
 
-                        button.classList.add('bg-green-800', 'text-white');
-                        selectedSeat = button.id;
+                        if (button.classList.contains('bg-green-800')) {
+                            selectedSeats.add(button.id); // add selected seats
+                        }
+                        else {
+                            selectedSeats.delete(button.id);  // remove seats
+                        }
                     });
                 }
             });
 
             document.getElementById('reserveButton').addEventListener('click', () => {
-                if (!selectedSeat) {
-                    alert("Please select a seat.");
+                if (selectedSeats.size === 0) {
+                    alert("Please select at least one seat.");
                     return;
                 }
 
                 const lab = "G202";
                 const time = "0815 - 0845";
-                const date = "2025-06-18"; 
+                const date = "2025-06-18";
+
+                const seatsString = Array.from(selectedSeats).join(', '); // convert set to comma-separated string
 
                 const query = new URLSearchParams({
                     lab,
                     time,
                     date,
-                    seat: selectedSeat
+                    seats: seatsString
                 }).toString();
 
                 window.location.href = `main.html?${query}`;
