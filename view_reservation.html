@@ -5,7 +5,7 @@
     <title>View Lab Reservation</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="bg-gray-100">
     <!-- header -->
     <header class="h-24 text-white p-8 flex justify-between items-center" style="background-color: #133301;">
         <h1 class="text-4xl">
@@ -27,9 +27,8 @@
         </div>
     </header>
     
-    <div class="flex flex-col gap-6 px-15 bg-gray-100">
         <!-- tab buttons -->
-        <div class="flex justify-start mx-10 mt-10">
+        <div class="flex justify-start mx-25 mt-15 mb-10">
             <div class="flex gap-4 bg-gray-200 rounded-lg">
                 <button id="tab-upcoming" onclick="switchTab('upcoming')" class="tab-button bg-white text-black font-semibold px-4 py-1 rounded-full shadow">Upcoming</button>
                 <button id="tab-past" onclick="switchTab('past')" class="tab-button text-gray-400 font-semibold px-4 py-1 rounded-full">Past</button>
@@ -42,10 +41,10 @@
             <!-- res 1 -->
             <div class="flex flex-col gap-4 mb-12">
                 <!-- date div -->
-                <h2 class="text-2xl font-bold text-gray-700 mx-10">June 2025</h2>
+                <h2 class="text-2xl font-bold text-gray-700 mx-30">June 2025</h2>
 
                 <!-- reservation box -->
-                <div class="flex items-center justify-between bg-white p-4 mx-15 rounded-lg shadow">
+                <div class="flex items-center justify-between bg-white p-4 mx-30 rounded-lg shadow">
                     <!-- left side -->
                     <div class="flex mx-4 gap-6 items-center">
                         <div class="text-center">
@@ -99,10 +98,10 @@
             <!-- res 2 -->
             <div class="flex flex-col gap-4 mb-12">
                 <!-- date div -->
-                <h2 class="text-2xl font-bold text-gray-700 mx-10">July 2025</h2>
+                <h2 class="text-2xl font-bold text-gray-700 mx-30">July 2025</h2>
 
                 <!-- reservation box -->
-                <div class="flex items-center justify-between bg-white p-4 mx-15 rounded-lg shadow">
+                <div class="flex items-center justify-between bg-white p-4 mx-30 rounded-lg shadow">
                     <!-- left side -->
                     <div class="flex mx-4 gap-6 items-center">
                         <div class="text-center">
@@ -159,10 +158,10 @@
             <!-- res 1 -->
             <div id="reservation-list" class="flex flex-col gap-4 mb-12">
                 <!-- date div -->
-                <h2 class="text-2xl font-bold text-gray-700 mx-10">June 2024</h2>
+                <h2 class="text-2xl font-bold text-gray-700 mx-30">June 2024</h2>
 
                 <!-- reservation box -->
-                <div class="flex items-center justify-between bg-white p-4 mx-15 rounded-lg shadow">
+                <div class="flex items-center justify-between bg-white p-4 mx-30 rounded-lg shadow">
                     <!-- left side -->
                     <div class="flex mx-4 gap-6 items-center">
                         <div class="text-center">
@@ -202,12 +201,11 @@
         <!-- CANCELLED -->
         <div id="cancelled-tab" class="tab-content hidden">
             <div class="flex flex-col gap-4 mb-12">
-                <div class="flex items-center justify-center p-10 bg-white mx-15 rounded-lg shadow text-gray-500">
+                <div class="flex items-center justify-center p-10 bg-white mx-30 rounded-lg shadow text-black">
                     No cancelled reservations.
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 <script>
