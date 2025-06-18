@@ -7,17 +7,85 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-white font-sans">
-  <header class="h-24 p-8 flex justify-between items-center text-white" style="background-color: #133301;">
-    <h1 class="text-4xl"><span class="font-bold">LAB</span><span class="font-extralight">RESERVATION</span></h1>
-    <nav class="space-x-40 text-2xl">
-      <a href="main.html" class="hover:underline ml-10">Reserve Seat</a>
-      <a href="view_reservation.html" class="hover:underline mr-10">Your Reservations</a>
-    </nav>
-    <h2 class="text-4xl"><span class="font-bold">ADMIN MODE</span></h2>
-    <a href="login.html" title="Logout" class="ml-4">
+    <!-- header -->
+    <header class="h-24 text-white p-8 flex justify-between items-center" style="background-color: #133301;">
+        <h1 class="text-4xl">
+            <span class="font-bold">LAB</span><span class="font-extralight">RESERVATION</span>
+        </h1>
+
+        <nav class="space-x-40">
+            <a href="adminmain.html" class="hover:underline text-2xl ml-10">Reserve Seat</a>
+            <a href="view_reservation.html" class="hover:underline text-2xl mr-10">Your Reservations</a>
+        </nav>
+
+        <div class="flex items-center space-x-4">
+            <h2 class="text-4xl"><span class="font-bold">ADMIN MODE</span></h2>
+            <a href="login.html" title="Logout" class="ml-4">
                 <img src="logout.png" alt="Logout" class="w-6 h-6 hover:opacity-80 cursor-pointer" />
             </a>
-  </header>
+        </div>
+    </header>
+
+  <div class="flex justify-center space-x-2 mt-6" id="roomButtons">
+    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G201">G201</button>
+    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G202">G202</button>
+    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G203">G203</button>
+    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G204">G204</button>
+    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G205">G205</button>
+    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G206">G206</button>
+  </div>
+
+    <div class="flex flex-col items-center mt-10">
+      <div class="flex items-center space-x-2 mb-4">
+        <label for="date" class="font-semibold">DATE:</label>
+        <input type="date" id="date" class="border border-gray-300 px-2 py-1 rounded" />
+      </div>
+      <div class="text-center mb-4">
+        <h2 class="text-2xl font-bold">G202 COMPUTER LABORATORY</h2>
+        <p class="text-xl font-bold" id="displayDate">Sunday 20th July</p>
+      </div>
+
+      <div class="flex justify-center w-full">
+        <div class="overflow-x-auto">
+          <table class="table-auto border-separate border-spacing-2 border border-white w-full" id="timeSlots">
+            <thead>
+              <tr class="text-white" style="background-color: #008722;">
+                <th class="font-medium px-5 py-1 border border-white">Time</th>
+                <th class="font-medium px-5 py-1 border border-white">Lab Cap</th>
+                <th class="font-medium px-5 py-1 border border-white">Reserved</th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              <tr class="cursor-pointer text-blue-600 bg-[#A2F1B6] hover:bg-lime-50" data-time="0730 - 0800" data-reserved="23">
+                <td class="font-bold px-4 py-2 border border-white">0730 - 0800</td>
+                <td class="font-bold border border-white">23</td>
+                <td class="font-bold border border-white">23</td>
+              </tr>
+              <tr class="cursor-pointer bg-[#A2F1B6] hover:bg-lime-50" data-time="0815 - 0845" data-reserved="0">
+                <td class="font-bold px-4 py-2 border border-white">0815 - 0845</td>
+                <td class="font-bold border border-white">23</td>
+                <td class="font-bold border border-white">0</td>
+              </tr>
+              <tr class="cursor-pointer bg-[#A2F1B6] hover:bg-lime-50" data-time="1030 - 1100" data-reserved="19">
+                <td class="font-bold px-4 py-2 border border-white">1030 - 1100</td>
+                <td class="font-bold border border-white">23</td>
+                <td class="font-bold border border-white">19</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="mt-2 text-sm text-center">
+            <span class="text-blue-600">BLUE</span> - Closed Lab<br />
+            <span class="text-black">BLACK</span> - Open Lab
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="Main.js"></script>
+
   
-  </body>
+</body>
 </html>
+
+

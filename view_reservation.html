@@ -13,7 +13,7 @@
         </h1>
 
         <nav class="space-x-40">
-            <a href="main.html" class="hover:underline text-2xl ml-10">Reserve Seat</a>
+            <a href="main.html" class="hover:underline text-2xl ml-20">Reserve Seat</a>
             <a href="view_reservation.html" class="hover:underline text-2xl mr-10">Your Reservations</a>
         </nav>
 
@@ -21,13 +21,13 @@
             <a href="profile.html">
                 <img src="user.jpg" alt="User" class="w-20 h-20 rounded-full hover:opacity-80 cursor-pointer" />
             </a>
-            <a href="login.html" title="Logout" class="ml-4">
+            <a href="login.html" title="Logout" class="">
                 <img src="logout.png" alt="Logout" class="w-6 h-6 hover:opacity-80 cursor-pointer" />
             </a>
         </div>
     </header>
     
-    <div class="flex flex-col gap-6 px-15 bg-gray-100 min-h-screen">
+    <div class="flex flex-col gap-6 px-15 bg-gray-100">
         <!-- tab buttons -->
         <div class="flex justify-start mx-10 mt-10">
             <div class="flex gap-4 bg-gray-200 rounded-lg">
@@ -42,7 +42,7 @@
             <!-- res 1 -->
             <div class="flex flex-col gap-4 mb-12">
                 <!-- date div -->
-                <h2 class="text-2xl font-semibold text-gray-700 mx-10">June 2025</h2>
+                <h2 class="text-2xl font-bold text-gray-700 mx-10">June 2025</h2>
 
                 <!-- reservation box -->
                 <div class="flex items-center justify-between bg-white p-4 mx-15 rounded-lg shadow">
@@ -87,10 +87,8 @@
                             <!-- dropdown menu -->
                             <div class="dropdown absolute mt-7 w-48 bg-white rounded-md shadow-lg border border-gray-200 hidden z-100">
                                 <ul class="py-1 text-sm text-gray-700">
-                                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Reschedule Booking</a></li>
-                                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Change Seats</a></li>
-                                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">View Seating</a></li>
-                                <li><a href="#" class="block px-4 py-2 text-red-500 hover:bg-red-100">Cancel</a></li>
+                                <li><a href="seating.html" class="block px-4 py-2 hover:bg-gray-100">Edit</a></li>
+                                <li><a onclick="return confirm('Are you sure?')" class="block px-4 py-2 text-red-500 hover:bg-red-100">Cancel</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -101,7 +99,7 @@
             <!-- res 2 -->
             <div class="flex flex-col gap-4 mb-12">
                 <!-- date div -->
-                <h2 class="text-2xl font-semibold text-gray-700 mx-10">July 2025</h2>
+                <h2 class="text-2xl font-bold text-gray-700 mx-10">July 2025</h2>
 
                 <!-- reservation box -->
                 <div class="flex items-center justify-between bg-white p-4 mx-15 rounded-lg shadow">
@@ -146,10 +144,8 @@
                             <!-- dropdown menu -->
                             <div class="dropdown absolute mt-7 w-48 bg-white rounded-md shadow-lg border border-gray-200 hidden z-100">
                                 <ul class="py-1 text-sm text-gray-700">
-                                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Reschedule Booking</a></li>
-                                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Change Seats</a></li>
-                                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">View Seating</a></li>
-                                <li><a href="#" class="block px-4 py-2 text-red-500 hover:bg-red-100">Cancel</a></li>
+                                <li><a href="seating.html" class="block px-4 py-2 hover:bg-gray-100">Edit</a></li>
+                                <li><a onclick="return confirm('Are you sure?')" class="block px-4 py-2 text-red-500 hover:bg-red-100">Cancel</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -163,7 +159,7 @@
             <!-- res 1 -->
             <div id="reservation-list" class="flex flex-col gap-4 mb-12">
                 <!-- date div -->
-                <h2 class="text-2xl font-semibold text-gray-700 mx-10">June 2024</h2>
+                <h2 class="text-2xl font-bold text-gray-700 mx-10">June 2024</h2>
 
                 <!-- reservation box -->
                 <div class="flex items-center justify-between bg-white p-4 mx-15 rounded-lg shadow">
@@ -198,23 +194,6 @@
                             <p class="bg-green-100 rounded-full px-2 text-xs font-semibold text-center">Requested 06/02/2025</p>
                             <p class="bg-green-100 rounded-full px-2 text-xs font-semibold text-center">Juan Dela Cruz</p>
                         </div>
-
-                        <!-- dropdown thing -->
-                        <div class="flex self-center relative">
-                            <button class="edit bg-gray-100 px-3 py-1 rounded-md text-sm shadow-sm hover:bg-green-100">
-                            Edit this reservation
-                            </button>
-
-                            <!-- dropdown menu -->
-                            <div class="dropdown absolute mt-7 w-48 bg-white rounded-md shadow-lg border border-gray-200 hidden z-100">
-                                <ul class="py-1 text-sm text-gray-700">
-                                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Reschedule Booking</a></li>
-                                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Change Seats</a></li>
-                                <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">View Seating</a></li>
-                                <li><a href="#" class="block px-4 py-2 text-red-500 hover:bg-red-100">Cancel</a></li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div> 
@@ -238,7 +217,7 @@
             const dropdown = e.target.nextElementSibling;
             dropdown.classList.toggle('hidden');
 
-            // close other open dropdowns
+            // close other open dropdowns qheen u click outisde the box
             document.querySelectorAll('.dropdown').forEach(d => {
             if (d !== dropdown) d.classList.add('hidden');
             });
@@ -251,7 +230,7 @@
         }
     });
 
-
+    // upcoming, past, cancelled
     function switchTab(tabName) {
         const tabs = ['upcoming', 'past', 'cancelled'];
 
