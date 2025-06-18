@@ -37,13 +37,6 @@ if (!users || users.length === 0) {
       email: "evan.tan@dlsu.edu.ph",
       username: "evan",
       password: "evan123"
-    },
-    {
-      firstName: "Admin",
-      lastName: " Admin",
-      email:"admin@dlsu.edu.ph",
-      username: "Admin",
-      password: "1234"
     }
   ];
 
@@ -77,15 +70,11 @@ document.querySelector("form").addEventListener("submit", function (e) { // logi
     const username = usernameInput.value.trim();
     const password = passwordInput.value;
     // checks if there's a user in the user array
-    const userFound = users.find(user => user.username === username && user.password === password);
+    const userFound = users.some(user => user.username === username && user.password === password);
 
    
     if (userFound) {
       localStorage.setItem("loggedIn",JSON.stringify(userFound));
-      console.log(userFound.firstName);
-        if (userFound.username === "Admin"){
-          window.location.href = "adminmain.html";
-        }
         if (rememberMe) {
             localStorage.setItem("rememberedUser", JSON.stringify({ username, password }));
             
