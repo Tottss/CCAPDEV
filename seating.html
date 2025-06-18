@@ -190,18 +190,43 @@
         </main>
 
         <script>
-            const seats = document.querySelectorAll('button'); // get all seat buttons
+            const seats = document.querySelectorAll('button');
 
+            let selectedSeat = null;
             seats.forEach(button => {
-                if (button.id !== 'reserveButton') { // doesn't include reserve button
+                if (button.id !== 'reserveButton') {
                     button.addEventListener('click', () => {
-                        button.classList.toggle('bg-green-800');
-                        button.classList.toggle('text-white');
+                        seats.forEach(btn => {
+                            if (btn.id !== 'reserveButton') {
+                                btn.classList.remove('bg-green-800', 'text-white');
+                            }
+                        });
+
+                        button.classList.add('bg-green-800', 'text-white');
+                        selectedSeat = button.id;
                     });
                 }
+            });
+
+            document.getElementById('reserveButton').addEventListener('click', () => {
+                if (!selectedSeat) {
+                    alert("Please select a seat.");
+                    return;
+                }
+
+                const lab = "G202";
+                const time = "0815 - 0845";
+                const date = "2025-06-18"; 
+
+                const query = new URLSearchParams({
+                    lab,
+                    time,
+                    date,
+                    seat: selectedSeat
+                }).toString();
+
+                window.location.href = `main.html?${query}`;
             });
         </script>
     </body>
 </html>
-<!--4 seats per table, 6 tables, so 24 seats-->
-<!--date, time, room no., prof name-->
