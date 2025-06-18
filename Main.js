@@ -430,4 +430,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   updateRoomDisplay();
+  addSlot("G203","7:30","june 16","B6");
+  addSlot("G206","10:30","june 17","A6");
+  addSlot("G208","8:30","june 18","B6");
+  addSlot("G204","7:30","june 19","B6");
 });
