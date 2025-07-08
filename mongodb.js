@@ -6,6 +6,7 @@ const User = require('./models/User');
 
 
 const app = express();
+app.use(express.json());
 const port = 3000;
 
 // MongoDB connection
@@ -46,16 +47,6 @@ app.get('/signup', (req, res) => {
   res.sendFile(path.join(__dirname, 'signup.html'));
 });
 
-app.post('/signup', async (req, res) => {
-  const formData = req.body;
-  formData.newsletter = formData.newsletter === 'on';
-  const newUser = new User(formData);
-  
-  await newUser.save();
-
-//   res.render('partials/confirmation', { formData });
-});
-
 app.post('/login', async(req, res) => {
   const { username, password } = req.body;
   try {
@@ -73,6 +64,28 @@ app.post('/login', async(req, res) => {
   catch (err) {
     console.error(err);
     res.status(500).send('Server Error');
+  }
+});
+
+app.post('/signup', async(req, res) => {
+  const { firstName, lastName, email, username, password } = req.body;
+
+  try {
+    const existing = await User.findOne({ username });
+
+    if (existing) {
+      return res.status(401).send('Username already taken.');
+    }
+    
+    const newUser = new User({ firstName, lastName, email, username, password });
+    await newUser.save();
+
+    res.send('Signup successful');
+  }
+
+  catch (err) {
+    console.error(err);
+    res.status(500).send('Server Error during signup');
   }
 });
 
