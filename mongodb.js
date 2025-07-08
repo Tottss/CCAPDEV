@@ -57,19 +57,18 @@ app.post('/signup', async (req, res) => {
 });
 
 app.post('/login', async(req, res) => {
-  const { email, password } = req.body;
+  const { username, password } = req.body;
   try {
-    const user = await User.findOne({email});
+    const user = await User.findOne({ username });
 
     if (!user) {
-      return res.status(401).send('Invalid email');
+      return res.status(401).send('Invalid username');
     }
     if (user.password !== password) {
       return res.status(401).send('Invalid password');
     }
 
     res.send('Login successful');
-    res.redirect('/dashboard');
   }
   catch (err) {
     console.error(err);
@@ -85,14 +84,6 @@ app.get('/users', async (req, res) => {
   } catch (err) {
     res.status(500).send("Error fetching users.");
   }
-});
-
-app.get('/login', (req, res) => {
-  res.render('partials/login');
-});
-
-app.get('/dashboard', (req, res) => {
-  res.render('partials/dashboard');
 });
 
 app.listen(port, () => {
