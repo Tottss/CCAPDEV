@@ -4,7 +4,8 @@ const path = require('path');
 const mongoose = require('mongoose');
 const User = require('./models/User');
 const addSampleData = require('./sampledata')
-
+const roomRoutes = require('./routes/rooms'); // Adjust path if needed
+app.use('/', roomRoutes);
 const app = express();
 app.use(express.json());
 const port = 3000;
