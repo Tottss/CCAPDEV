@@ -1,7 +1,10 @@
+- handlebars (jomi)
+    + create separate branch work on this
 - seating.html
     + unhardcode
-- view reservations
+- view reservations (andre)
     + unhardcode
 - add slot
     + replace with reservation history
 - admin
+- tulog (jeru)
