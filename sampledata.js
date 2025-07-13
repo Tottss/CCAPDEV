@@ -53,8 +53,8 @@ function addSampleData() {
 
     Room.insertMany([
     // G201
-        {
-        roomCode: "G201",
+    {
+    roomCode: "G201",
         reservations: [
             {
             date: "2025-07-16",
@@ -285,14 +285,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G201",
-        reservations: [
-            {
             date: "2025-07-17",
             slots: [
                 {
@@ -521,14 +515,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G201",
-        reservations: [
-            {
             date: "2025-07-18",
             slots: [
                 {
@@ -757,14 +745,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G201",
-        reservations: [
-            {
             date: "2025-07-19",
             slots: [
                 {
@@ -993,14 +975,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G201",
-        reservations: [
-            {
             date: "2025-07-20",
             slots: [
                 {
@@ -1231,11 +1207,10 @@ function addSampleData() {
             ]
         }
         ]
-        },
-
+    },
     // G202
-        {
-        roomCode: "G202",
+    {
+    roomCode: "G202",
         reservations: [
             {
             date: "2025-07-16",
@@ -1466,14 +1441,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G202",
-        reservations: [
-            {
             date: "2025-07-17",
             slots: [
                 {
@@ -1702,14 +1671,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G202",
-        reservations: [
-            {
             date: "2025-07-18",
             slots: [
                 {
@@ -1938,14 +1901,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G202",
-        reservations: [
-            {
             date: "2025-07-19",
             slots: [
                 {
@@ -2174,14 +2131,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G202",
-        reservations: [
-            {
             date: "2025-07-20",
             slots: [
                 {
@@ -2412,11 +2363,10 @@ function addSampleData() {
             ]
         }
         ]
-        },
-
+    },
     // G203
-        {
-        roomCode: "G203",
+    {
+    roomCode: "G203",
         reservations: [
             {
             date: "2025-07-16",
@@ -2647,14 +2597,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G203",
-        reservations: [
-            {
             date: "2025-07-17",
             slots: [
                 {
@@ -2883,14 +2827,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G203",
-        reservations: [
-            {
             date: "2025-07-18",
             slots: [
                 {
@@ -3119,15 +3057,9 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G203",
-        reservations: [
-            {
-            date: "2025-07-17",
+            date: "2025-07-19",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -3355,14 +3287,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G203",
-        reservations: [
-            {
             date: "2025-07-20",
             slots: [
                 {
@@ -3593,11 +3519,10 @@ function addSampleData() {
             ]
         }
         ]
-        },
-
+    },
     // G204
-        {
-        roomCode: "G204",
+    {
+    roomCode: "G204",
         reservations: [
             {
             date: "2025-07-16",
@@ -3828,14 +3753,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G204",
-        reservations: [
-            {
             date: "2025-07-17",
             slots: [
                 {
@@ -4064,14 +3983,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G204",
-        reservations: [
-            {
             date: "2025-07-18",
             slots: [
                 {
@@ -4300,14 +4213,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G204",
-        reservations: [
-            {
             date: "2025-07-19",
             slots: [
                 {
@@ -4536,14 +4443,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G204",
-        reservations: [
-            {
             date: "2025-07-20",
             slots: [
                 {
@@ -4774,11 +4675,10 @@ function addSampleData() {
             ]
         }
         ]
-        },
-    
+    },
     // G205
-        {
-        roomCode: "G205",
+    {
+    roomCode: "G205",
         reservations: [
             {
             date: "2025-07-16",
@@ -5009,14 +4909,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G205",
-        reservations: [
-            {
             date: "2025-07-17",
             slots: [
                 {
@@ -5245,14 +5139,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G205",
-        reservations: [
-            {
             date: "2025-07-18",
             slots: [
                 {
@@ -5481,14 +5369,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G205",
-        reservations: [
-            {
             date: "2025-07-19",
             slots: [
                 {
@@ -5717,14 +5599,8 @@ function addSampleData() {
                     ]
                 }
             ]
-        }
-        ]
         },
-
         {
-        roomCode: "G205",
-        reservations: [
-            {
             date: "2025-07-20",
             slots: [
                 {
@@ -5955,1188 +5831,7 @@ function addSampleData() {
             ]
         }
         ]
-        },
-
-        // G206
-        {
-        roomCode: "G206",
-        reservations: [
-            {
-            date: "2025-07-16",
-            slots: [
-                {
-                time: "0730 - 0800",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0800 - 0830",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0830 - 0900",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0900 - 0930",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0930 - 1000",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                }
-            ]
-        }
-        ]
-        },
-
-        {
-        roomCode: "G206",
-        reservations: [
-            {
-            date: "2025-07-17",
-            slots: [
-                {
-                time: "0730 - 0800",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0800 - 0830",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0830 - 0900",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0900 - 0930",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0930 - 1000",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                }
-            ]
-        }
-        ]
-        },
-
-        {
-        roomCode: "G206",
-        reservations: [
-            {
-            date: "2025-07-18",
-            slots: [
-                {
-                time: "0730 - 0800",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0800 - 0830",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0830 - 0900",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0900 - 0930",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0930 - 1000",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                }
-            ]
-        }
-        ]
-        },
-
-        {
-        roomCode: "G206",
-        reservations: [
-            {
-            date: "2025-07-19",
-            slots: [
-                {
-                time: "0730 - 0800",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0800 - 0830",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0830 - 0900",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0900 - 0930",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0930 - 1000",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                }
-            ]
-        }
-        ]
-        },
-
-        {
-        roomCode: "G206",
-        reservations: [
-            {
-            date: "2025-07-20",
-            slots: [
-                {
-                time: "0730 - 0800",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0800 - 0830",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0830 - 0900",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0900 - 0930",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                },
-                {
-                time: "0930 - 1000",
-                cap: 35,
-                reservedSeats: [0],
-                seats: [
-                    {seatNumber: 1, isReserved: false, reservedBy: null},
-                    {seatNumber: 2, isReserved: false, reservedBy: null},
-                    {seatNumber: 3, isReserved: false, reservedBy: null},
-                    {seatNumber: 4, isReserved: false, reservedBy: null},
-                    {seatNumber: 5, isReserved: false, reservedBy: null},
-                    {seatNumber: 6, isReserved: false, reservedBy: null},
-                    {seatNumber: 7, isReserved: false, reservedBy: null},
-                    {seatNumber: 8, isReserved: false, reservedBy: null},
-                    {seatNumber: 9, isReserved: false, reservedBy: null},
-                    {seatNumber: 10, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 11, isReserved: false, reservedBy: null},
-                    {seatNumber: 12, isReserved: false, reservedBy: null},
-                    {seatNumber: 13, isReserved: false, reservedBy: null},
-                    {seatNumber: 14, isReserved: false, reservedBy: null},
-                    {seatNumber: 15, isReserved: false, reservedBy: null},
-                    {seatNumber: 16, isReserved: false, reservedBy: null},
-                    {seatNumber: 17, isReserved: false, reservedBy: null},
-                    {seatNumber: 18, isReserved: false, reservedBy: null},
-                    {seatNumber: 19, isReserved: false, reservedBy: null},
-                    {seatNumber: 20, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 21, isReserved: false, reservedBy: null},
-                    {seatNumber: 22, isReserved: false, reservedBy: null},
-                    {seatNumber: 23, isReserved: false, reservedBy: null},
-                    {seatNumber: 24, isReserved: false, reservedBy: null},
-                    {seatNumber: 25, isReserved: false, reservedBy: null},
-                    {seatNumber: 26, isReserved: false, reservedBy: null},
-                    {seatNumber: 27, isReserved: false, reservedBy: null},
-                    {seatNumber: 28, isReserved: false, reservedBy: null},
-                    {seatNumber: 29, isReserved: false, reservedBy: null},
-                    {seatNumber: 30, isReserved: false, reservedBy: null},
-
-                    {seatNumber: 31, isReserved: false, reservedBy: null},
-                    {seatNumber: 32, isReserved: false, reservedBy: null},
-                    {seatNumber: 33, isReserved: false, reservedBy: null},
-                    {seatNumber: 34, isReserved: false, reservedBy: null},
-                    {seatNumber: 35, isReserved: false, reservedBy: null}
-                    ]
-                }
-            ]
-        }
-        ]
-        }
-    ])
+    }
+    ]);
 }
 module.exports = addSampleData;
