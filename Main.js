@@ -26,14 +26,13 @@ async function updateRoomDisplay() {
 
   try {
     const response = await fetch(`/api/rooms/${currentRoom}/${currentDate}`);
-    const data = await response.json();
-    const slots = data.slots || [];
+    const slots = await response.json();
 
     slots.forEach(slot => {
-      const row = document.createElement('tr');
-      const reservedCount = slot.reservedSeats.length;
+      const reservedCount = slot.reserved;
       const isFull = reservedCount >= slot.cap;
 
+      const row = document.createElement('tr');
       row.className = `cursor-pointer ${isFull ? 'text-blue-500' : 'text-black'} bg-[#A2F1B6] hover:bg-lime-50`;
       row.innerHTML = `
         <td class="font-bold px-4 py-2 border border-white">${slot.time}</td>
