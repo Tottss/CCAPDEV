@@ -1,19 +1,61 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
+document.addEventListener("DOMContentLoaded", async () => {
+  const loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
+  if (!loggedIn) return;
 
-    console.log(loggedIn);
-    if (loggedIn) {
-      const firstName = loggedIn.firstName;
-      const lastName = loggedIn.lastName;
-      const fullName = firstName + " " + lastName;
-      const email = loggedIn.email ;
+  const userId = loggedIn._id;
 
-      // Set name label
-      console.log(fullName);
-      document.getElementById("name").textContent = fullName;
-      document.getElementById("email").textContent = email;
+  const res = await fetch(`/api/user/${userId}`);
+  const user = await res.json();
+
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const contact = document.getElementById("contact");
+  const bio = document.getElementById("biography");
+  const links = document.getElementById("links");
+
+  name.textContent = `${user.firstName} ${user.lastName}`;
+  email.textContent = user.email;
+  contact.textContent = user.contact || "No contact info";
+  bio.textContent = user.biography || "No biography";
+  links.textContent = user.links || "No links";
+
+  let editing = false;
+  const editBtn = document.getElementById("editProfile");
+
+  editBtn.addEventListener("click", async () => {
+    if (!editing) {
+      editBtn.textContent = "Save Profile";
+      editing = true;
+
+      name.innerHTML = `<input id="inputName" value="${user.firstName} ${user.lastName}" class="border rounded px-2 py-1 w-full" />`;
+      email.innerHTML = `<input id="inputEmail" value="${user.email}" class="border rounded px-2 py-1 w-full" />`;
+      contact.innerHTML = `<input id="inputContact" value="${user.contact || ""}" class="border rounded px-2 py-1 w-full" />`;
+      bio.innerHTML = `<textarea id="inputBio" class="border rounded px-2 py-1 w-full">${user.biography || ""}</textarea>`;
+      links.innerHTML = `<input id="inputLinks" value="${user.links || ""}" class="border rounded px-2 py-1 w-full" />`;
+
     } else {
-      // Optional: Redirect to login page if not logged in
-      //window.location.href = "login.html";
+      await saveProfile(userId); 
+      editBtn.textContent = "Edit Profile";
+      editing = false;
+
+      window.location.reload();
     }
   });
+});
+
+const saveProfile = async (userId) => {
+  const updatedData = {
+    firstName: document.getElementById("inputName").value.split(" ")[0],
+    lastName: document.getElementById("inputName").value.split(" ").slice(1).join(" "),
+    email: document.getElementById("inputEmail").value,
+    contact: document.getElementById("inputContact").value,
+    biography: document.getElementById("inputBio").value,
+    links: document.getElementById("inputLinks").value
+  };
+
+  await fetch(`/api/user/${userId}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(updatedData)
+  });
+};
