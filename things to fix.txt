@@ -1,1 +1,7 @@
-hello
+- seating.html
+    + unhardcode
+- view reservations
+    + unhardcode
+- add slot
+    + replace with reservation history
+- admin
