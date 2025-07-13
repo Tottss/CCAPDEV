@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
 const User = require('./models/User');
-
+const addSampleData = require('./sampledata')
 
 const app = express();
 app.use(express.json());
@@ -16,8 +16,14 @@ app.use('/api/user', userRoutes);
 mongoose.connect('mongodb://localhost:27017/computerReservationDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true
-}).then(() => console.log("MongoDB connected"))
-  .catch(err => console.log("MongoDB error:", err));
+}).then(async() => {
+  console.log("MongoDB connected");
+
+  const count = await User.countDocuments({});
+  if (count === 0) {
+    addSampleData();
+  }
+}).catch(err => console.log("MongoDB error:", err));
 
 
 app.use(express.urlencoded({ extended: true }));
