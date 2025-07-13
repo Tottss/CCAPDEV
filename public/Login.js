@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => { // login form submission
             window.location.href = "adminmain.html";
           }
           else {
-            window.location.href = "main.html";
+            window.location.href = "/dashboard";
           }
         }
 

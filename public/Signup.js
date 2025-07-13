@@ -82,7 +82,7 @@ document.getElementById("signupForm").addEventListener("submit", async function 
         if (response.ok) {
             alert("User registered! You can now log in.");
             e.target.reset();
-            window.location.href = "login.html";
+            window.location.href = "/login";
         }
         else {
             alert("Signup failed: " + result);

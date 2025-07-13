@@ -7,25 +7,7 @@
 </head>
 <body class="bg-gray-100">
     <!-- header -->
-    <header class="h-24 text-white p-8 flex justify-between items-center" style="background-color: #133301;">
-        <h1 class="text-4xl">
-            <span class="font-bold">LAB</span><span class="font-extralight">RESERVATION</span>
-        </h1>
-
-        <nav class="space-x-40">
-            <a href="main.html" class="hover:underline text-2xl ml-20">Reserve Seat</a>
-            <a href="view_reservation.html" class="hover:underline text-2xl mr-10">Your Reservations</a>
-        </nav>
-
-        <div class="flex items-center space-x-4">
-            <a href="profile.html">
-                <img src="user.jpg" alt="User" class="w-20 h-20 rounded-full hover:opacity-80 cursor-pointer" />
-            </a>
-            <a href="login.html" title="Logout" class="">
-                <img src="logout.png" alt="Logout" class="w-6 h-6 hover:opacity-80 cursor-pointer" />
-            </a>
-        </div>
-    </header>
+    {{> header}}
     
         <!-- tab buttons -->
         <div class="flex justify-start mx-25 mt-15 mb-10">
@@ -198,7 +180,7 @@
                             <!-- dropdown menu -->
                             <div class="dropdown absolute mt-7 w-48 bg-white rounded-md shadow-lg border border-gray-200 hidden z-100">
                                 <ul class="py-1 text-sm text-gray-700">
-                                <li><a href="seating.html" class="block px-4 py-2 hover:bg-gray-100">Edit</a></li>
+                                <li><a href="/seating" class="block px-4 py-2 hover:bg-gray-100">Edit</a></li>
                                 <li><a onclick="return confirm('Are you sure?')" class="block px-4 py-2 text-red-500 hover:bg-red-100">Cancel</a></li>
                                 </ul>
                             </div>

@@ -7,4 +7,6 @@
 - add slot
     + replace with reservation history
 - admin
-- tulog (jeru)
+- weird file capitalizations
+    + bat yung iba adminmain yung iba adminSeating
+    + yung ibang js capitalized una yung iba all lower caps

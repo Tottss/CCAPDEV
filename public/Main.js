@@ -1,4 +1,4 @@
-import { loadHeaderPfp } from './loadHeaderPfp.js';
+import { loadHeaderPfp } from '../loadHeaderPfp.js';
 document.addEventListener('DOMContentLoaded', loadHeaderPfp);
 
 const roomButtons = document.querySelectorAll('button');
@@ -13,7 +13,7 @@ let currentRoom = "G201";
 let currentDate = new Date().toISOString().split("T")[0];
 
 document.getElementById('confirmBtn').addEventListener('click', function () {
-  window.location.href = 'login.html';
+  window.location.href = '/login';
 });
 
 function formatDateDisplay(dateStr) {
@@ -56,7 +56,7 @@ async function updateRoomDisplay() {
         });
 
         const isAdmin = window.location.pathname.includes("adminmain.html");
-        const destination = isAdmin ? "adminSeating.html" : "seating.html";
+        const destination = isAdmin ? "adminSeating.html" : "/seating";
 
         window.location.href = `${destination}?${params.toString()}`;
       });
