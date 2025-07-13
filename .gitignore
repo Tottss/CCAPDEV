@@ -1,0 +1,14 @@
+# Node.js
+node_modules/
+.env
+
+# VS Code
+.vscode/
+
+# Output/build folders
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", () => { // login form submission
       const password = passwordInput.value;
 
       try { // send data to backend
-        const response = await fetch("/login", {
+        const response = await fetch("/api/user/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
