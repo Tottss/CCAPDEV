@@ -325,48 +325,53 @@ function formatDateDisplay(dateStr) {
   return date.toLocaleDateString(undefined, options);
 }
 
-function updateRoomDisplay() {
+async function updateRoomDisplay() {
   roomTitle.textContent = `${currentRoom} COMPUTER LABORATORY`;
   displayDate.textContent = formatDateDisplay(currentDate);
   timeSlotsTable.innerHTML = "";
 
-  const slots = (roomData[currentRoom] && roomData[currentRoom][currentDate]) || roomData[currentRoom]?.default || [];
+  try {
+    const response = await fetch(`/api/room?roomCode=${currentRoom}&date=${currentDate}`);
+    const data = await response.json();
+    const slots = data.slots || [];
 
-  slots.forEach(slot => {
-    const row = document.createElement('tr');
-    const isFull = slot.reserved >= slot.cap;
-    row.className = `cursor-pointer ${isFull ? 'text-blue-500' : 'text-black'} bg-[#A2F1B6] hover:bg-lime-50`;
-    row.innerHTML = `
-      <td class="font-bold px-4 py-2 border border-white">${slot.time}</td>
-      <td class="font-bold border border-white">${slot.cap}</td>
-      <td class="font-bold border border-white">${slot.reserved}</td>
-    `;
+    slots.forEach(slot => {
+      const row = document.createElement('tr');
+      const reservedCount = slot.reservedSeats.length;
+      const isFull = reservedCount >= slot.cap;
 
-    row.addEventListener("click", () => {
-      if (slot.reserved >= slot.cap) {
-        alert("This slot is full.");
-        return;
-      }
+      row.className = `cursor-pointer ${isFull ? 'text-blue-500' : 'text-black'} bg-[#A2F1B6] hover:bg-lime-50`;
+      row.innerHTML = `
+        <td class="font-bold px-4 py-2 border border-white">${slot.time}</td>
+        <td class="font-bold border border-white">${slot.cap}</td>
+        <td class="font-bold border border-white">${reservedCount}</td>
+      `;
 
-      const lab = currentRoom;
-      const time = slot.time;
-      const dateDisplay = formatDateDisplay(currentDate);
+      row.addEventListener("click", () => {
+        if (isFull) {
+          alert("This slot is full.");
+          return;
+        }
 
-      const params = new URLSearchParams({
-        room: lab,
-        time: time,
-        date: dateDisplay
+        const params = new URLSearchParams({
+          room: currentRoom,
+          time: slot.time,
+          date: formatDateDisplay(currentDate)
+        });
+
+        const isAdmin = window.location.pathname.includes("adminmain.html");
+        const destination = isAdmin ? "adminSeating.html" : "seating.html";
+
+        window.location.href = `${destination}?${params.toString()}`;
       });
 
-      
-      const isAdmin = window.location.pathname.includes("adminmain.html");
-      const destination = isAdmin ? "adminSeating.html" : "seating.html";
-
-      window.location.href = `${destination}?${params.toString()}`;
+      timeSlotsTable.appendChild(row);
     });
 
-    timeSlotsTable.appendChild(row);
-  });
+  } catch (err) {
+    console.error("Failed to load room data:", err);
+    alert("Unable to fetch time slots. Please try again.");
+  }
 }
 
 function addSlot(lab, time, date, seat) {

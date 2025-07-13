@@ -9,6 +9,8 @@ const app = express();
 app.use(express.json());
 const port = 3000;
 
+const roomRoutes = require('./routes/rooms');
+app.use('/', roomRoutes);
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/user', userRoutes);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
