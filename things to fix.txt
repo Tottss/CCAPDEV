@@ -10,3 +10,5 @@
 - weird file capitalizations
     + bat yung iba adminmain yung iba adminSeating
     + yung ibang js capitalized una yung iba all lower caps
+- default sample data edits
+    + add profile pics and info to one or two of the sample users
