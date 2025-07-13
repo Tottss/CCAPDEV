@@ -71,11 +71,28 @@ document.addEventListener("DOMContentLoaded", async () => {
     } else {
       await saveProfile(userId); 
       editBtn.textContent = "Edit Profile";
-      editing = false;
+      editing = true
       setTimeout(() => window.location.reload(), 300);
     }
   });
 
+
+  const saveProfile = async (userId) => {
+  const updatedData = {
+    firstName: document.getElementById("inputName").value.split(" ")[0],
+    lastName: document.getElementById("inputName").value.split(" ").slice(1).join(" "),
+    email: document.getElementById("inputEmail").value,
+    contact: document.getElementById("inputContact").value,
+    biography: document.getElementById("inputBio").value,
+    links: document.getElementById("inputLinks").value
+  };
+
+  await fetch(`/api/user/${userId}`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(updatedData)
+  });
+};
   // Profile picture upload
   const pfpForm = document.getElementById("pfpForm");
   if (pfpForm) {
