@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
       currentRoom = roomName;
       roomButtons.forEach(b => b.classList.remove('bg-green-600', 'text-white'));
       button.classList.add('bg-green-600', 'text-white');
-      updateRoomDisplay(); // This already clears and reloads time slot content
+      updateRoomDisplay();
     });
   });
 
