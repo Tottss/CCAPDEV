@@ -89,10 +89,12 @@ document.addEventListener("DOMContentLoaded", () => { // login form submission
           body: JSON.stringify({ username, password })
         });
 
-        const result = await response.text();
+        const result = await response.json();
+       
 
         if (response.ok) { // if successful login
           // store session info
+           localStorage.setItem("loggedIn", JSON.stringify(result.user));
           if (rememberMe.checked) {
             localStorage.setItem("rememberedUser", JSON.stringify({ username, password }));
           }

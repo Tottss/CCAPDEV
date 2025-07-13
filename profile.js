@@ -12,6 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("name").textContent = fullName;
     } else {
       // Optional: Redirect to login page if not logged in
-      window.location.href = "login.html";
+      //window.location.href = "login.html";
     }
   });

@@ -59,7 +59,7 @@ app.post('/login', async(req, res) => {
       return res.status(401).send('Invalid password');
     }
 
-    res.send('Login successful');
+    res.json({ message: 'Login successful', user });
   }
   catch (err) {
     console.error(err);
