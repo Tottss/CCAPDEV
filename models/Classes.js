@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const seatSchema = new mongoose.Schema({
   seatNumber: { type: Number, required: true },   // e.g., 1, 2, 3, ..., 20
   isReserved: { type: Boolean, default: false },
-  reservedBy: { type: String, default: null },     // user ID or name of the person who reserved the seat
+  reservedBy: { type: String, default: null },  // user ID or name of the person who reserved the seat
+  isBlocked: { type: Boolean, default: false }   
 });
 
 const timeSlotSchema = new mongoose.Schema({
