@@ -58,6 +58,7 @@
 document.addEventListener("DOMContentLoaded", () => { // login form submission
     
     // gets input from login forms
+    localStorage.removeItem("loggedIn");
     const usernameInput = document.getElementById("username");
     const passwordInput = document.getElementById("password");
     const rememberMe = document.getElementById("rememberMe");
