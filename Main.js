@@ -1,3 +1,6 @@
+import { loadHeaderPfp } from './loadHeaderPfp.js';
+document.addEventListener('DOMContentLoaded', loadHeaderPfp);
+
 const roomButtons = document.querySelectorAll('button');
 const displayDate = document.getElementById('displayDate');
 const dateInput = document.getElementById('date');
