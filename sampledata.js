@@ -8,7 +8,7 @@ function addSampleData() {
       lastName: "Santos",
       email: "alice.santos@dlsu.edu.ph",
       username: "alice",
-      password: "alice123"
+      password: "alice123",
     },
     {
       firstName: "Bob",
@@ -57,7 +57,7 @@ function addSampleData() {
         roomCode: "G201",
         reservations: [
             {
-            date: "2025-06-18",
+            date: "2025-07-16",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -293,7 +293,7 @@ function addSampleData() {
         roomCode: "G201",
         reservations: [
             {
-            date: "2025-06-19",
+            date: "2025-07-17",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -529,7 +529,7 @@ function addSampleData() {
         roomCode: "G201",
         reservations: [
             {
-            date: "2025-06-20",
+            date: "2025-07-18",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -765,7 +765,7 @@ function addSampleData() {
         roomCode: "G201",
         reservations: [
             {
-            date: "2025-06-21",
+            date: "2025-07-19",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -1001,7 +1001,7 @@ function addSampleData() {
         roomCode: "G201",
         reservations: [
             {
-            date: "2025-06-22",
+            date: "2025-07-20",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -1238,7 +1238,7 @@ function addSampleData() {
         roomCode: "G202",
         reservations: [
             {
-            date: "2025-06-18",
+            date: "2025-07-16",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -1474,7 +1474,7 @@ function addSampleData() {
         roomCode: "G202",
         reservations: [
             {
-            date: "2025-06-19",
+            date: "2025-07-17",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -1710,7 +1710,7 @@ function addSampleData() {
         roomCode: "G202",
         reservations: [
             {
-            date: "2025-06-20",
+            date: "2025-07-18",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -1946,7 +1946,7 @@ function addSampleData() {
         roomCode: "G202",
         reservations: [
             {
-            date: "2025-06-21",
+            date: "2025-07-19",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -2182,7 +2182,7 @@ function addSampleData() {
         roomCode: "G202",
         reservations: [
             {
-            date: "2025-06-22",
+            date: "2025-07-20",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -2419,7 +2419,7 @@ function addSampleData() {
         roomCode: "G203",
         reservations: [
             {
-            date: "2025-06-18",
+            date: "2025-07-16",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -2655,7 +2655,7 @@ function addSampleData() {
         roomCode: "G203",
         reservations: [
             {
-            date: "2025-06-19",
+            date: "2025-07-17",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -2891,7 +2891,7 @@ function addSampleData() {
         roomCode: "G203",
         reservations: [
             {
-            date: "2025-06-20",
+            date: "2025-07-18",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -3127,7 +3127,7 @@ function addSampleData() {
         roomCode: "G203",
         reservations: [
             {
-            date: "2025-06-21",
+            date: "2025-07-17",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -3363,7 +3363,7 @@ function addSampleData() {
         roomCode: "G203",
         reservations: [
             {
-            date: "2025-06-22",
+            date: "2025-07-20",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -3600,7 +3600,7 @@ function addSampleData() {
         roomCode: "G204",
         reservations: [
             {
-            date: "2025-06-18",
+            date: "2025-07-16",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -3836,7 +3836,7 @@ function addSampleData() {
         roomCode: "G204",
         reservations: [
             {
-            date: "2025-06-19",
+            date: "2025-07-17",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -4072,7 +4072,7 @@ function addSampleData() {
         roomCode: "G204",
         reservations: [
             {
-            date: "2025-06-20",
+            date: "2025-07-18",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -4308,7 +4308,7 @@ function addSampleData() {
         roomCode: "G204",
         reservations: [
             {
-            date: "2025-06-21",
+            date: "2025-07-19",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -4544,7 +4544,7 @@ function addSampleData() {
         roomCode: "G204",
         reservations: [
             {
-            date: "2025-06-22",
+            date: "2025-07-20",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -4781,7 +4781,7 @@ function addSampleData() {
         roomCode: "G205",
         reservations: [
             {
-            date: "2025-06-18",
+            date: "2025-07-16",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -5017,7 +5017,7 @@ function addSampleData() {
         roomCode: "G205",
         reservations: [
             {
-            date: "2025-06-19",
+            date: "2025-07-17",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -5253,7 +5253,7 @@ function addSampleData() {
         roomCode: "G205",
         reservations: [
             {
-            date: "2025-06-20",
+            date: "2025-07-18",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -5489,7 +5489,7 @@ function addSampleData() {
         roomCode: "G205",
         reservations: [
             {
-            date: "2025-06-21",
+            date: "2025-07-19",
             slots: [
                 {
                 time: "0730 - 0800",
@@ -5725,7 +5725,7 @@ function addSampleData() {
         roomCode: "G205",
         reservations: [
             {
-            date: "2025-06-22",
+            date: "2025-07-20",
             slots: [
                 {
                 time: "0730 - 0800",
