@@ -1,10 +1,16 @@
 const mongoose = require('mongoose');
 
 // Schema for each time slot
+const seatSchema = new mongoose.Schema({
+  seatNumber: { type: Number, required: true },   // e.g., 1, 2, 3, ..., 20
+  isReserved: { type: Boolean, default: false },
+  reservedBy: { type: String, default: null }     // user ID or name of the person who reserved the seat
+});
+
 const timeSlotSchema = new mongoose.Schema({
-  time: { type: String, required: true },     // e.g., "0730 - 0800"
-  cap: { type: Number, required: true },      // capacity
-  reserved: { type: Number, default: 0 }      // how many are reserved
+  time: { type: String, required: true },             // "0730 - 0800"
+  cap: { type: Number, required: true },              // Total seats, e.g., 20
+  reservedSeats: [{ type: Number }]                   // e.g., [1, 3, 5, 6, 20]
 });
 
 // Schema for each date inside a room
