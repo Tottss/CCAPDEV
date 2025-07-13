@@ -1,6 +1,39 @@
 const express = require('express');
+const multer = require('multer');
+const path = require('path');
+const User = require('../models/User'); // adjust path if needed
 const router = express.Router();
-const User = require('../models/User');
+
+// Multer setup for file uploads
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/');
+  },
+  filename: (req, file, cb) => {
+    const ext = path.extname(file.originalname);
+    const filename = `${req.params.id}_${Date.now()}${ext}`;
+    cb(null, filename);
+  }
+});
+
+const upload = multer({ storage });
+
+// Upload profile picture route
+router.post('/:id/pfp', upload.single('profilePicture'), async (req, res) => {
+  try {
+    const user = await User.findByIdAndUpdate(
+      req.params.id,
+      { profilePicture: req.file.filename },
+      { new: true }
+    );
+    if (!user) return res.status(404).send("User not found");
+    res.send({ message: "Profile picture updated", filename: req.file.filename });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Error uploading profile picture");
+  }
+  console.log("Received file:", req.file);
+});
 
 router.post('/login', async(req, res) => {
   const { username, password } = req.body;

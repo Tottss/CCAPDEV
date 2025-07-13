@@ -23,7 +23,7 @@
 
         <div class="flex items-center space-x-4">
             <a href="profile.html">
-                <img src="user.jpg" alt="User" class="w-20 h-20 rounded-full hover:opacity-80 cursor-pointer" />
+                <img id="headerPfp" src="user.jpg" alt="User" class="w-20 h-20 rounded-full hover:opacity-80 cursor-pointer" />
             </a>
             <a href="login.html" title="Logout" class="ml-4">
                 <img src="logout.png" alt="Logout" class="w-6 h-6 hover:opacity-80 cursor-pointer" />
@@ -45,9 +45,26 @@
                     
                     <div class="flex flex-col items-center gap-4">
                         <div class="relative">
-                            <img src="user.jpg" alt="User" class="w-36 h-36 rounded-full" />
+                            <img id="profilePfp" src="user.jpg" alt="User" class="w-36 h-36 rounded-full" />
                         </div>
-                        <button id="editPfp" class="mt-10 bg-gray-200 hover:bg-gray-100 text-black px-6 py-2 rounded-lg text-lg font-medium justify-center">Edit Profile Picture</button>
+                        <!-- button to change profile pic -->
+                        <button id="editPfpBtn" class="mt-10 bg-gray-200 hover:bg-gray-100 text-black px-6 py-2 rounded-lg text-lg font-medium">
+                        Edit Profile Picture
+                        </button>
+
+                        <!-- modal popup for pic upload -->
+                        <div id="pfpModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+                        <div class="bg-white rounded-lg p-6 w-96 shadow-lg">
+                            <h2 class="text-xl font-semibold mb-4">Upload Profile Picture</h2>
+                            <form id="pfpForm" enctype="multipart/form-data" class="flex flex-col space-y-4">
+                            <input type="file" id="pfpInput" name="profilePicture" accept="image/*" class="border p-2 rounded" />
+                            <div class="flex justify-end space-x-2">
+                                <button type="button" id="closeModal" class="bg-gray-300 hover:bg-gray-400 text-black px-4 py-2 rounded">Cancel</button>
+                                <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">Upload</button>
+                            </div>
+                            </form>
+                        </div>
+                        </div>
                     </div>
 
                     <!--profile details-->

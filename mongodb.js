@@ -11,6 +11,7 @@ const port = 3000;
 
 const userRoutes = require('./routes/userRoutes');
 app.use('/api/user', userRoutes);
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // MongoDB connection
 mongoose.connect('mongodb://localhost:27017/computerReservationDB', {

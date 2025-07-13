@@ -9,6 +9,10 @@ const userSchema = new mongoose.Schema({
   contact: String,
   biography: String,
   links: String,
+  profilePicture: {
+  type: String,
+  default: ''
+  },
 }, { timestamps: true });
 
 module.exports = mongoose.model('User', userSchema);
