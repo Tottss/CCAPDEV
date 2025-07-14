@@ -2,6 +2,7 @@ const express = require('express');
 const multer = require('multer');
 const path = require('path');
 const User = require('../models/User'); // adjust path if needed
+const Room = require('../models/Classes');
 const router = express.Router();
 
 // Multer setup for file uploads
@@ -107,5 +108,73 @@ router.post('/:id', async (req, res) => {
     res.status(500).json({ message: 'Server error', error: err });
   }
 });
+
+// view reservations fetch db
+router.get('/view_reservation/:username', async (req, res) => {
+  const username = req.params.username;
+
+  try {
+    const rooms = await Room.find();
+    const userReservations = [];
+
+    rooms.forEach(room => {
+      room.reservations.forEach(dateEntry => {
+        dateEntry.slots.forEach(slot => {
+          slot.seats.forEach(seat => {
+            if (seat.reservedBy === username) {
+              userReservations.push({
+                roomCode: room.roomCode,
+                date: dateEntry.date,
+                time: slot.time,
+                seatNumber: seat.seatNumber,
+                reservedBy: seat.reservedBy
+              });
+            }
+          });
+        });
+      });
+    });
+
+    res.json(userReservations);
+  } catch (err) {
+    console.error("Error fetching reservations:", err);
+    res.status(500).send("Error fetching reservations");
+  }
+});
+//cancel res
+router.delete('/cancel_reservation', async (req, res) => {
+  const { roomCode, date, time, seatNumber } = req.body;
+
+  try {
+    const room = await Room.findOne({ roomCode });
+
+    if (!room) {
+      return res.status(404).json({ message: 'Room not found' });
+    }
+
+    if (!dateEntry) {
+      return res.status(404).json({ message: 'Date not found' });
+    }
+
+    if (!slot) {
+      return res.status(404).json({ message: 'Slot not found' });
+    }
+
+    const seat = slot.seats.find(seat => seat.seatNumber === seatNumber);
+    if (!seat) {
+      return res.status(404).json({ message: 'Seat not found' });
+    }
+
+    seat.reservedBy = null;
+
+    await room.save();
+
+    res.json({ message: 'Reservation cancelled successfully' });
+  } catch (err) {
+    console.error('Error cancelling reservation:', err);
+    res.status(500).json({ message: 'Server error cancelling reservation' });
+  }
+});
+
 
 module.exports = router;
