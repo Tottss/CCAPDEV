@@ -10,34 +10,20 @@
     <!-- header -->
     {{> header}}
 
-  <div class="flex justify-center space-x-2 mt-6" id="roomButtons">
-    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G201">G201</button>
-    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G202">G202</button>
-    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G203">G203</button>
-    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G204">G204</button>
-    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G205">G205</button>
-    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G206">G206</button>
-  </div>
-
-  <div class="grid grid-cols-2 gap-8 max-w-4xl mx-auto mt-10">
-    <div class="flex flex-col items-center space-y-6">
-      <div class="flex items-center space-x-2">
-        <label for="date" class="font-semibold">DATE:</label>
-        <input type="date" id="date" class="border border-gray-300 px-2 py-1 rounded" />
-      </div>
-
-      <div class="w-72 rounded" style="background-color: #A2F1B6;">
-        <h2 class="text-lg font-bold text-white p-2 pl-4 text-left" style="background-color: #008722;">RECENT RESERVATIONS</h2>
-
-        <div id="historyScroll" class="max-h-56 overflow-y-auto p-2">
-          <ul id="historyList" class="space-y-2 text-sm font-bold">
-            <!-- Prvs reservations show here -->
-          </ul>
-        </div>
-      </div>
-
+ <div class="flex justify-center space-x-2 mt-6" id="roomButtons">
+      <button class="px-4 py-2 rounded-full bg-green-100" data-room="G201">G201</button>
+      <button class="px-4 py-2 rounded-full bg-green-100" data-room="G202">G202</button>
+      <button class="px-4 py-2 rounded-full bg-green-100" data-room="G203">G203</button>
+      <button class="px-4 py-2 rounded-full bg-green-100" data-room="G204">G204</button>
+      <button class="px-4 py-2 rounded-full bg-green-100" data-room="G205">G205</button>
+      <button class="px-4 py-2 rounded-full bg-green-100" data-room="G206">G206</button>
     </div>
 
+      <div class="flex flex-col items-center">
+        <div class="flex items-center space-x-2 mt-10 mb-4">
+          <label for="date" class="font-semibold">DATE:</label>
+          <input type="date" id="date" class="border border-gray-300 px-2 py-1 rounded" />
+        </div>
     <div class="flex flex-col items-center">
       <div class="text-center mb-4">
         <h2 class="text-2xl font-bold">G202 COMPUTER LABORATORY</h2>
@@ -79,7 +65,9 @@
         </div>
       </div>
     </div>
-  </div>
+      </div>
+    </div>
+
 
   <script type="module" src="Main.js"></script>
 
