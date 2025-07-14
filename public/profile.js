@@ -39,7 +39,19 @@ document.addEventListener("DOMContentLoaded", async () => {
   email.textContent = user.email;
   contact.textContent = user.contact || "No contact info";
   bio.textContent = user.biography || "No biography";
-  links.textContent = user.links || "No links";
+  if (user.links) {
+    const linkArray = user.links.split(',').map(link => {
+      let url = link.trim();
+      if (!/^https?:\/\//i.test(url)) {
+        url = 'https://' + url;
+      }
+      return `<a href="${url}" target="_blank" class="block text-blue-600 underline hover:text-blue-800">${url}</a>`;
+    });
+
+    links.innerHTML = linkArray.join('');
+  } else {
+    links.textContent = "No links";
+  }
 
   const editBtn = document.getElementById("editProfile");
   let editing = false;
