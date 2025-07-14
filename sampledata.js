@@ -66,7 +66,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: true, reservedBy: 'alice', reservationDate: '2025-06-15'},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -111,7 +111,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -156,7 +156,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -201,7 +201,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -246,7 +246,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -296,7 +296,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: true, reservedBy: 'alice', reservationDate: '2025-07-15'},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -341,7 +341,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -386,7 +386,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -431,7 +431,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -476,7 +476,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -526,7 +526,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -571,7 +571,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -616,7 +616,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -661,7 +661,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -706,7 +706,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -756,7 +756,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -801,7 +801,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -846,7 +846,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -891,7 +891,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -936,7 +936,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -986,7 +986,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1031,7 +1031,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1076,7 +1076,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1121,7 +1121,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1166,7 +1166,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1216,7 +1216,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1261,7 +1261,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1306,7 +1306,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1351,7 +1351,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1396,7 +1396,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1452,7 +1452,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1497,7 +1497,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1542,7 +1542,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1587,7 +1587,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1632,7 +1632,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1682,7 +1682,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1727,7 +1727,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1772,7 +1772,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1817,7 +1817,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1862,7 +1862,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1912,7 +1912,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -1957,7 +1957,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2002,7 +2002,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2047,7 +2047,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2092,7 +2092,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2142,7 +2142,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2187,7 +2187,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2232,7 +2232,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2277,7 +2277,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2322,7 +2322,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2372,7 +2372,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2417,7 +2417,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2462,7 +2462,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2507,7 +2507,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2552,7 +2552,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2608,7 +2608,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2653,7 +2653,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2698,7 +2698,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2743,7 +2743,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2788,7 +2788,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2838,7 +2838,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2883,7 +2883,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2928,7 +2928,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -2973,7 +2973,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3018,7 +3018,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3068,7 +3068,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3113,7 +3113,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3158,7 +3158,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3203,7 +3203,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3248,7 +3248,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3298,7 +3298,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3343,7 +3343,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3388,7 +3388,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3433,7 +3433,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3478,7 +3478,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3528,7 +3528,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3573,7 +3573,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3618,7 +3618,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3663,7 +3663,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3708,7 +3708,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3764,7 +3764,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3809,7 +3809,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3854,7 +3854,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3899,7 +3899,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3944,7 +3944,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -3994,7 +3994,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4039,7 +4039,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4084,7 +4084,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4129,7 +4129,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4174,7 +4174,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4224,7 +4224,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4269,7 +4269,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4314,7 +4314,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4359,7 +4359,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4404,7 +4404,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4454,7 +4454,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4499,7 +4499,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4544,7 +4544,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4589,7 +4589,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4634,7 +4634,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4684,7 +4684,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4729,7 +4729,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4774,7 +4774,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4819,7 +4819,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4864,7 +4864,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4920,7 +4920,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -4965,7 +4965,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5010,7 +5010,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5055,7 +5055,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5100,7 +5100,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5150,7 +5150,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5195,7 +5195,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5240,7 +5240,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5285,7 +5285,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5330,7 +5330,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5380,7 +5380,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5425,7 +5425,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5470,7 +5470,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5515,7 +5515,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5560,7 +5560,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5610,7 +5610,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5655,7 +5655,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5700,7 +5700,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5745,7 +5745,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5790,7 +5790,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5840,7 +5840,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5885,7 +5885,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5930,7 +5930,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -5975,7 +5975,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6020,7 +6020,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6076,7 +6076,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6121,7 +6121,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6166,7 +6166,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6211,7 +6211,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6256,7 +6256,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6306,7 +6306,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6351,7 +6351,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6396,7 +6396,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6441,7 +6441,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6486,7 +6486,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6536,7 +6536,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6581,7 +6581,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6626,7 +6626,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6671,7 +6671,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6716,7 +6716,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6766,7 +6766,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6811,7 +6811,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6856,7 +6856,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6901,7 +6901,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6946,7 +6946,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -6996,7 +6996,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -7041,7 +7041,7 @@ function addSampleData() {
                 {
                 time: "0800 - 0830",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -7086,7 +7086,7 @@ function addSampleData() {
                 {
                 time: "0830 - 0900",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -7131,7 +7131,7 @@ function addSampleData() {
                 {
                 time: "0900 - 0930",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
@@ -7176,7 +7176,7 @@ function addSampleData() {
                 {
                 time: "0930 - 1000",
                 cap: 35,
-                reservedSeats: [0],
+                reservedSeats: [],
                 seats: [
                     {seatNumber: 1, isReserved: false, reservedBy: null},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
