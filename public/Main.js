@@ -55,8 +55,8 @@ async function updateRoomDisplay() {
           date: formatDateDisplay(currentDate)
         });
 
-        const isAdmin = window.location.pathname.includes("adminmain.html");
-        const destination = isAdmin ? "adminSeating.html" : "/seating";
+        const isAdmin = window.location.pathname.includes("/admin");
+        const destination = isAdmin ? "/adminseating" : "/seating";
 
         window.location.href = `${destination}?${params.toString()}`;
       });

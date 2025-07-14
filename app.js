@@ -64,6 +64,14 @@ app.get('/dashboard', (req, res) => {
   res.render('main'); 
 });
 
+app.get('/admin', (req, res) => {
+  res.render('adminmain'); 
+});
+
+app.get('/adminseating', (req, res) => {
+  res.render('adminSeating'); 
+});
+
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
 });

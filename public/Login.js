@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => { // login form submission
           }
 
           if(username === "Admin") {
-            window.location.href = "adminmain.html";
+            window.location.href = "/admin";
           }
           else {
             window.location.href = "/dashboard";
