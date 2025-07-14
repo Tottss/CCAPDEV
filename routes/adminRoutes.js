@@ -9,7 +9,7 @@ const adminCheck = (req, res, next) => {
   next();
 };
 
-router.post('/api/admin/reserve', adminCheck, async (req, res) => {
+router.post('/api/rooms/:roomCode/:date/:time', adminCheck, async (req, res) => {
   const { room, date, time, seats, action, reservedBy } = req.body;
 
   if (!room || !date || !time || !Array.isArray(seats) || seats.length === 0 || !action) {
