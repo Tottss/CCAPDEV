@@ -60,10 +60,10 @@
                             <p id="reservation-room" class="mt-2 text-xl">G302A</p>
                         </div>
 
-                        <div>
+                        {{!-- <div>
                             <label class="block text-lg font-medium text-gray-700">Professor</label>
                             <p id="reservation-professor" class="mt-2 text-xl">Danny Cheng</p>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -211,41 +211,7 @@
             </div>
         </main>
 
-        <script>
-            let currentMode = "reserve";
-
-            const modeButtons = document.querySelectorAll(".mode-btn");
-
-            modeButtons.forEach(btn => {
-                btn.addEventListener("click", () => {
-                    currentMode = btn.dataset.mode;
-
-                    modeButtons.forEach(b => b.classList.remove("ring", "ring-offset-2", "ring-black"));
-                    btn.classList.add("ring", "ring-offset-2", "ring-black");
-
-                    console.log("Current mode:", currentMode);
-                });
-            });
-
-            const seats = document.querySelectorAll('button');
-
-            seats.forEach(button => {
-                if (button.id !== 'saveButton' && !button.classList.contains('mode-btn')) {
-                    button.addEventListener('click', () => {
-                        if (currentMode === "reserve") {
-                            button.classList.add('bg-green-800', 'text-white');
-                            button.classList.remove('bg-red-700');
-                        } else if (currentMode === "remove") {
-                            button.classList.remove('bg-green-800', 'bg-red-700', 'text-white');
-                            button.classList.add('bg-gray-300');
-                        } else if (currentMode === "block") {
-                            button.classList.add('bg-red-700', 'text-white');
-                            button.classList.remove('bg-green-800');
-                        }
-                    });
-                }
-            });
-        </script>
+        <script src ="adminSeating.js"></script>
         {{!-- <script src = "seating.js"></script> --}}
     </body>
 </html>
