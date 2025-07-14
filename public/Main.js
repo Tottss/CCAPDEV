@@ -31,8 +31,17 @@ async function updateRoomDisplay() {
       const reservedCount = slot.reserved;
       const isFull = reservedCount >= slot.cap;
 
+      // Parse current slot's start time and convert it to a Date object
+      const slotStart = slot.time.split(" - ")[0]; // e.g., "0730"
+      const [hourStr, minStr] = [slotStart.slice(0, 2), slotStart.slice(2)];
+      const slotDateTime = new Date(currentDate);
+      slotDateTime.setHours(parseInt(hourStr), parseInt(minStr));
+
+      const now = new Date();
+      const isPast = new Date(currentDate) < now.setHours(0, 0, 0, 0) || slotDateTime < new Date();
+
       const row = document.createElement('tr');
-      row.className = `cursor-pointer ${isFull ? 'text-blue-500' : 'text-black'} bg-[#A2F1B6] hover:bg-lime-50`;
+      row.className = `cursor-pointer ${isFull || isPast ? 'text-blue-500' : 'text-black'} bg-[#A2F1B6] hover:bg-lime-50`;
       row.innerHTML = `
         <td class="font-bold px-4 py-2 border border-white">${slot.time}</td>
         <td class="font-bold border border-white">${slot.cap}</td>
@@ -40,6 +49,11 @@ async function updateRoomDisplay() {
       `;
 
       row.addEventListener("click", () => {
+        if (isPast) {
+          alert("This time slot has already passed.");
+          return;
+        }
+
         if (isFull) {
           alert("This slot is full.");
           return;
@@ -48,7 +62,7 @@ async function updateRoomDisplay() {
         const params = new URLSearchParams({
           room: currentRoom,
           time: slot.time,
-          date: formatDateDisplay(currentDate)
+          date: currentDate
         });
 
         const isAdmin = window.location.pathname.includes("/admin");
