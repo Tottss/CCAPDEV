@@ -17,6 +17,17 @@
 
             <div class="md:w-1/3 flex flex-col gap-8">
 
+                <!-- Reservation Mode Selector -->
+                <div class="bg-white rounded-lg shadow-md p-6 w-full text-center">
+                <h2 class="text-2xl font-bold mb-4">Mode</h2>
+                <div id="modeSelector" class="flex justify-center gap-4">
+                    <button class="mode-btn px-4 py-2 rounded-lg bg-green-700 text-white font-semibold" data-mode="reserve">Reserve</button>
+                    <button class="mode-btn px-4 py-2 rounded-lg bg-yellow-500 text-black font-semibold" data-mode="remove">Remove</button>
+                    <button class="mode-btn px-4 py-2 rounded-lg bg-red-600 text-white font-semibold" data-mode="block">Block</button>
+                </div>
+                </div>
+
+
                 <!--inputting student name-->
                 <div class="bg-white rounded-lg shadow-md p-10">
                     <h2 class="text-3xl font-bold mb-6">Student</h2>
@@ -201,19 +212,41 @@
         </main>
 
         <script>
+            let currentMode = "reserve";
 
-            const seats = document.querySelectorAll('button'); // get all seat buttons
+            const modeButtons = document.querySelectorAll(".mode-btn");
+
+            modeButtons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    currentMode = btn.dataset.mode;
+
+                    modeButtons.forEach(b => b.classList.remove("ring", "ring-offset-2", "ring-black"));
+                    btn.classList.add("ring", "ring-offset-2", "ring-black");
+
+                    console.log("Current mode:", currentMode);
+                });
+            });
+
+            const seats = document.querySelectorAll('button');
 
             seats.forEach(button => {
-                if (button.id !== 'saveButton') { // doesn't include reserve button
+                if (button.id !== 'saveButton' && !button.classList.contains('mode-btn')) {
                     button.addEventListener('click', () => {
-                        button.classList.toggle('bg-green-800');
-                        button.classList.toggle('text-white');
+                        if (currentMode === "reserve") {
+                            button.classList.add('bg-green-800', 'text-white');
+                            button.classList.remove('bg-red-700');
+                        } else if (currentMode === "remove") {
+                            button.classList.remove('bg-green-800', 'bg-red-700', 'text-white');
+                            button.classList.add('bg-gray-300');
+                        } else if (currentMode === "block") {
+                            button.classList.add('bg-red-700', 'text-white');
+                            button.classList.remove('bg-green-800');
+                        }
                     });
                 }
             });
         </script>
-        <script src = "seating.js"></script>
+        {{!-- <script src = "seating.js"></script> --}}
     </body>
 </html>
 <!--4 seats per table, 9 tables (9th table has only 3 seats), so 34 seats-->
