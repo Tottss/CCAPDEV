@@ -172,6 +172,12 @@ router.delete('/cancel_reservation', async (req, res) => {
 
     seat.reservedBy = null;
     seat.reservationDate = null;
+    seat.isReserved = false;
+
+    const x = slot.reservedSeats.indexOf(seatNumber);
+    if (x !== -1) {
+      slot.reservedSeats.splice(x, 1);
+    }
 
     await room.save();
 
