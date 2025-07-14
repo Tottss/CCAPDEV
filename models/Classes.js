@@ -6,7 +6,8 @@ const seatSchema = new mongoose.Schema({
   isReserved: { type: Boolean, default: false },
   reservedBy: { type: String, default: null },  // user ID or name of the person who reserved the seat
   isBlocked: { type: Boolean, default: false },
-  reservationDate: { type: String, default: null }   
+  reservationDate: { type: String, default: null },
+  isAnonymous: { type: Boolean, default: false } // true if the reservation is anonymous   
 });
 
 const timeSlotSchema = new mongoose.Schema({
