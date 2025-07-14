@@ -1,3 +1,6 @@
+import { loadHeaderPfp } from '../loadHeaderPfp.js';
+document.addEventListener('DOMContentLoaded', loadHeaderPfp);
+
 document.addEventListener("click", (e) => {
   document.querySelectorAll('.dropdown').forEach(drop => {
     if (!e.target.closest('.edit') && !e.target.closest('.dropdown')) {
