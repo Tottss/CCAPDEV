@@ -84,8 +84,8 @@ async function loadReservationHistory() {
     return;
   }
 
-  const userId = loggedIn._id;     
-
+  const userId = loggedIn.firstname;     
+  console.log("Loading reservation history for user:", userId);
   const historyList = document.getElementById("historyList");
   historyList.innerHTML = "";
 
