@@ -66,7 +66,7 @@ function addSampleData() {
                 {
                 time: "0730 - 0800",
                 cap: 35,
-                reservedSeats: [],
+                reservedSeats: [1],
                 seats: [
                     {seatNumber: 1, isReserved: true, reservedBy: 'alice', reservationDate: '2025-06-15'},
                     {seatNumber: 2, isReserved: false, reservedBy: null},
