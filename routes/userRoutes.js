@@ -142,6 +142,9 @@ router.get('/view_reservation/:username', async (req, res) => {
   }
 });
 //cancel res
+// btw the implementation of this just sets
+// reservedBy and reservationDate to null
+// it doesnt actually delete the record
 router.delete('/cancel_reservation', async (req, res) => {
   const { roomCode, date, time, seatNumber } = req.body;
 
@@ -151,11 +154,11 @@ router.delete('/cancel_reservation', async (req, res) => {
     if (!room) {
       return res.status(404).json({ message: 'Room not found' });
     }
-
+    const dateEntry = room.reservations.find(res => res.date === date);
     if (!dateEntry) {
       return res.status(404).json({ message: 'Date not found' });
     }
-
+    const slot = dateEntry.slots.find(s => s.time === time);
     if (!slot) {
       return res.status(404).json({ message: 'Slot not found' });
     }
@@ -166,6 +169,7 @@ router.delete('/cancel_reservation', async (req, res) => {
     }
 
     seat.reservedBy = null;
+    seat.reservationDate = null;
 
     await room.save();
 

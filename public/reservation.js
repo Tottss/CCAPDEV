@@ -128,16 +128,14 @@ async function loadReservations(tabName) {
     container.innerHTML = `<div class="text-center text-red-500">Error loading reservations.</div>`;
   }
 }
-async function cancelReservation(roomCode, date, time, seatNumber, el) {
+window.cancelReservation = async function cancelReservation(roomCode, date, time, seatNumber, el) {
   if (!confirm("Are you sure you want to cancel this reservation?")) return;
 
   try {
     const res = await fetch(`/api/user/cancel_reservation`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ roomCode, date, time, seatNumber }),
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ roomCode, date, time, seatNumber }),
     });
 
     const data = await res.json();
