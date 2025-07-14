@@ -132,10 +132,15 @@ async function loadReservations(tabName) {
               </button>
               <div class="dropdown absolute mt-7 w-48 bg-white rounded-md shadow-lg border border-gray-200 hidden z-100">
                 <ul class="py-1 text-sm text-gray-700">
-                  <li><a href="/seating" class="block px-4 py-2 hover:bg-gray-100">Edit</a></li>
+                  <li>
+                  <a href="/seating?room=${r.roomCode}&date=${r.date}&time=${encodeURIComponent(r.time)}"
+                    class="block px-4 py-2 hover:bg-gray-100">
+                    Edit
+                    </a>
+                  </li>
                   <li>
                     <a href="#" class="block px-4 py-2 text-red-500 hover:bg-red-100"
-                      onclick="cancelReservation('${r.roomCode}', '${r.date}', '${r.time}', ${r.seatNumber}, this)">
+                      onclick="cancelReservation('${r.roomCode}', '${r.date}', '${r.time}', '${r.reservedBy}', this)">
                       Cancel
                     </a>
                   </li>
@@ -155,14 +160,14 @@ async function loadReservations(tabName) {
   }
 }
 
-window.cancelReservation = async function cancelReservation(roomCode, date, time, seatNumber, el) {
+window.cancelReservation = async function cancelReservation(roomCode, date, time, reservedBy, el) {
   if (!confirm("Are you sure you want to cancel this reservation?")) return;
 
   try {
     const res = await fetch(`/api/user/cancel_reservation`, {
-        method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ roomCode, date, time, seatNumber }),
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ roomCode, date, time, reservedBy }),
     });
 
     const data = await res.json();

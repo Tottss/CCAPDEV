@@ -148,40 +148,40 @@ router.get('/view_reservation/:username', async (req, res) => {
 // reservedBy and reservationDate to null
 // it doesnt actually delete the record
 router.delete('/cancel_reservation', async (req, res) => {
-  const { roomCode, date, time, seatNumber } = req.body;
+  const { roomCode, date, time, reservedBy } = req.body;
 
   try {
     const room = await Room.findOne({ roomCode });
+    if (!room) return res.status(404).json({ message: 'Room not found' });
 
-    if (!room) {
-      return res.status(404).json({ message: 'Room not found' });
-    }
-    const dateEntry = room.reservations.find(res => res.date === date);
-    if (!dateEntry) {
-      return res.status(404).json({ message: 'Date not found' });
-    }
+    const dateEntry = room.reservations.find(r => r.date === date);
+    if (!dateEntry) return res.status(404).json({ message: 'Date not found' });
+
     const slot = dateEntry.slots.find(s => s.time === time);
-    if (!slot) {
-      return res.status(404).json({ message: 'Slot not found' });
-    }
+    if (!slot) return res.status(404).json({ message: 'Slot not found' });
 
-    const seat = slot.seats.find(seat => seat.seatNumber === seatNumber);
-    if (!seat) {
-      return res.status(404).json({ message: 'Seat not found' });
-    }
+    let removedCount = 0;
 
-    seat.reservedBy = null;
-    seat.reservationDate = null;
-    seat.isReserved = false;
+    slot.seats.forEach(seat => {
+      if (seat.reservedBy === reservedBy) {
+        seat.reservedBy = null;
+        seat.reservationDate = null;
+        seat.isReserved = false;
+        seat.isAnonymous = false;
 
-    const x = slot.reservedSeats.indexOf(seatNumber);
-    if (x !== -1) {
-      slot.reservedSeats.splice(x, 1);
-    }
+        // Remove from reservedSeats if it's there
+        const index = slot.reservedSeats.indexOf(seat.seatNumber);
+        if (index !== -1) {
+          slot.reservedSeats.splice(index, 1);
+        }
+
+        removedCount++;
+      }
+    });
 
     await room.save();
 
-    res.json({ message: 'Reservation cancelled successfully' });
+    res.json({ message: `${removedCount} seat(s) cancelled successfully.` });
   } catch (err) {
     console.error('Error cancelling reservation:', err);
     res.status(500).json({ message: 'Server error cancelling reservation' });
