@@ -12,10 +12,6 @@ const scrollContainer = document.getElementById("slotScroll");
 let currentRoom = "G201";
 let currentDate = new Date().toISOString().split("T")[0];
 
-document.getElementById('confirmBtn').addEventListener('click', function () {
-  window.location.href = '/login';
-});
-
 function formatDateDisplay(dateStr) {
   const date = new Date(dateStr);
   const options = { weekday: 'long', day: 'numeric', month: 'long' };
@@ -70,29 +66,38 @@ async function updateRoomDisplay() {
   }
 }
 
-function addSlot(lab, time, date, seat) {
-  const li = document.createElement("li");
-  li.className = "flex items-center px-3 py-2 rounded";
-  li.style="background-color: #A2F1B6;"
+async function loadReservationHistory() {
+  const loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
+  if (!loggedIn) {
+    alert("User not logged in.");
+    return;
+  }
 
-  const removeBtn = document.createElement("span");
-  removeBtn.className = "text-[#A2F1B6] bg-white rounded-full w-5 h-5 flex items-center justify-center text-sm font-bold mr-2 cursor-pointer";
-  removeBtn.textContent = "×";
+  const userId = loggedIn._id;     
 
-  removeBtn.addEventListener("click", () => {
-    li.remove();
-  });
+  const historyList = document.getElementById("historyList");
+  historyList.innerHTML = "";
 
-  const text = document.createElement("span");
-  text.className = "text-sm font-bold";
-  text.textContent = `${lab} | ${time} | ${date}${seat ? " | Seat: " + seat : ""}`;
+  try {
+    const res = await fetch(`/api/reservations?user=${encodeURIComponent(userId)}`);
+    const reservations = await res.json();
 
-  li.appendChild(removeBtn);
-  li.appendChild(text);
-  slotList.appendChild(li);
+    if (reservations.length === 0) {
+      historyList.innerHTML = "<li>No past reservations.</li>";
+      return;
+    }
 
-  if (scrollContainer) {
-    scrollContainer.scrollTop = scrollContainer.scrollHeight;
+    reservations.forEach(r => {
+      const li = document.createElement("li");
+      li.className = "flex flex-col px-3 py-2 rounded bg-white";
+      li.innerHTML =
+        `<span>${r.room} | ${r.time} | ${r.date}</span>
+         <span class="text-gray-500 text-xs">${r.seat}</span>`;
+      historyList.appendChild(li);
+    });
+  } catch (err) {
+    console.error(err);
+    historyList.innerHTML = "<li>Failed to load history.</li>";
   }
 }
 
@@ -126,18 +131,6 @@ document.addEventListener("DOMContentLoaded", () => {
     updateRoomDisplay();
   });
 
-  const params = new URLSearchParams(window.location.search);
-  const lab = params.get("lab");
-  const time = params.get("time");
-  const date = params.get("date");
-  const seat = params.get("seat");
-  if (lab && time && date && seat) {
-    addSlot(lab, time, date, seat);
-  }
-
   updateRoomDisplay();
-  addSlot("G202", "0815 - 0845", "07/20/25");
-  addSlot("G203", "1245 - 1315", "07/20/25");
-  addSlot("G202", "0815 - 0845", "07/25/25");
-  addSlot("G211", "1245 - 1315", "07/27/25");
+  loadReservationHistory();
 });

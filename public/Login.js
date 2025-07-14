@@ -96,6 +96,8 @@ document.addEventListener("DOMContentLoaded", () => { // login form submission
         if (response.ok) { // if successful login
           // store session info
            localStorage.setItem("loggedIn", JSON.stringify(result.user));
+           //!!! below for reservation history !!!//
+           //localStorage.setItem('loginTime', new Date().toISOString());
           if (rememberMe.checked) {
             localStorage.setItem("rememberedUser", JSON.stringify({ username, password }));
           }
