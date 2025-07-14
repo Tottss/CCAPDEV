@@ -9,6 +9,10 @@ function addSampleData() {
       email: "alice.santos@dlsu.edu.ph",
       username: "alice",
       password: "alice123",
+      profilePicture: "6873e29529014536d16ce208_1752485744375.jpg",
+      biography: "in wonderland",
+      contact: "8700",
+      links: "https://www.instagram.com/disneystudios/"
     },
     {
       firstName: "Bob",
