@@ -48,7 +48,8 @@ async function updateRoomDisplay() {
         const params = new URLSearchParams({
           room: currentRoom,
           time: slot.time,
-          date: formatDateDisplay(currentDate)
+          date: currentDate
+          // date: formatDateDisplay(currentDate)
         });
 
         const isAdmin = window.location.pathname.includes("/admin");

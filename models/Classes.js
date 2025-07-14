@@ -14,6 +14,7 @@ const timeSlotSchema = new mongoose.Schema({
   time: { type: String, required: true },             // "0730 - 0800"
   cap: { type: Number, required: true },              // Total seats, e.g., 20
   reservedSeats: [{ type: Number }],                   // e.g., [1, 3, 5, 6, 20]
+  // professor: { type: String, required: true },
   seats: [seatSchema]
 });
 
