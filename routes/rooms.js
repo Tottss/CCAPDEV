@@ -27,8 +27,20 @@ router.get('/api/rooms/:roomCode/:date', async (req, res) => { // fetches all ti
   }
 });
 
+router.get('/api/current-user', (req, res) => {
+  if (!req.session.user) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+  
+  res.json({
+    username: req.session.user.username,
+    email: req.session.user.email
+  });
+});
+
 router.get('/api/rooms/:room/:date/:time', async (req, res) => { // fetches details of one timeslot
-  const { room, date, time } = req.params;
+  const { room, date } = req.params;
+  const time = decodeURIComponent(req.params.time);
 
   try {
     const roomDoc = await Room.findOne({ roomCode: room });
@@ -48,7 +60,7 @@ router.get('/api/rooms/:room/:date/:time', async (req, res) => { // fetches deta
 });
 
 router.post('/api/reserve', async (req, res) => {
-  const { room, date, time, seats, reservedBy } = req.body;
+  const { room, date, time, seats, reservedBy, isAnonymous } = req.body;
 
   if (!room || !date || !time || !Array.isArray(seats) || seats.length === 0) {
     return res.status(400).json({ message: "Missing reservation data." });
@@ -77,6 +89,7 @@ router.post('/api/reserve', async (req, res) => {
       if (seats.includes(seat.seatNumber)) {
         seat.isReserved = true;
         seat.reservedBy = reservedBy;
+        seat.isAnonymous = isAnonymous;
         if (!slot.reservedSeats.includes(seat.seatNumber)) {
           slot.reservedSeats.push(seat.seatNumber);
         }
