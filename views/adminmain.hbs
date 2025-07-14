@@ -10,20 +10,21 @@
   <!-- header -->
   {{> adminheader}}
 
-  <div class="flex justify-center space-x-2 mt-6" id="roomButtons">
-    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G201">G201</button>
-    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G202">G202</button>
-    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G203">G203</button>
-    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G204">G204</button>
-    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G205">G205</button>
-    <button class="px-4 py-2 rounded-full bg-green-100" data-room="G206">G206</button>
-  </div>
+    <div class="flex justify-center space-x-2 mt-6" id="roomButtons">
+      <button class="px-4 py-2 rounded-full bg-green-100" data-room="G201">G201</button>
+      <button class="px-4 py-2 rounded-full bg-green-100" data-room="G202">G202</button>
+      <button class="px-4 py-2 rounded-full bg-green-100" data-room="G203">G203</button>
+      <button class="px-4 py-2 rounded-full bg-green-100" data-room="G204">G204</button>
+      <button class="px-4 py-2 rounded-full bg-green-100" data-room="G205">G205</button>
+      <button class="px-4 py-2 rounded-full bg-green-100" data-room="G206">G206</button>
+    </div>
 
+      <div class="flex flex-col items-center">
+        <div class="flex items-center space-x-2 mt-10 mb-4">
+          <label for="date" class="font-semibold">DATE:</label>
+          <input type="date" id="date" class="border border-gray-300 px-2 py-1 rounded" />
+        </div>
     <div class="flex flex-col items-center">
-      <div class="flex items-center space-x-2 mt-10 mb-4">
-        <label for="date" class="font-semibold">DATE:</label>
-        <input type="date" id="date" class="border border-gray-300 px-2 py-1 rounded" />
-      </div>
       <div class="text-center mb-4">
         <h2 class="text-2xl font-bold">G202 COMPUTER LABORATORY</h2>
         <p class="text-xl font-bold" id="displayDate">Sunday 20th July</p>
@@ -64,9 +65,10 @@
         </div>
       </div>
     </div>
-  </div>
+      </div>
+    </div>
 
-  <script src="Main.js"></script>
+  <script type="module" src="Admin.js"></script>
   
   </body>
 </html>

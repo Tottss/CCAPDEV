@@ -1,7 +1,7 @@
 import { loadHeaderPfp } from '../loadHeaderPfp.js';
 document.addEventListener('DOMContentLoaded', loadHeaderPfp);
 
-const roomButtons = document.querySelectorAll('button');
+const roomButtons = document.querySelectorAll('#roomButtons button');
 const displayDate = document.getElementById('displayDate');
 const dateInput = document.getElementById('date');
 const roomTitle = document.querySelector('h2.text-2xl');
@@ -49,15 +49,17 @@ async function updateRoomDisplay() {
       `;
 
       row.addEventListener("click", () => {
-        if (isPast) {
-          alert("This time slot has already passed.");
-          return;
-        }
+        //--!! removed to let admin click any slot !!--//
 
-        if (isFull) {
-          alert("This slot is full.");
-          return;
-        }
+        // if (isPast) {
+        //   alert("This time slot has already passed.");
+        //   return;
+        // }
+
+        // if (isFull) {
+        //   alert("This slot is full.");
+        //   return;
+        // }
 
         const params = new URLSearchParams({
           room: currentRoom,
@@ -65,7 +67,7 @@ async function updateRoomDisplay() {
           date: currentDate
         });
 
-        window.location.href = `/seating?${params.toString()}`;
+        window.location.href = `/adminseating?${params.toString()}`;
       });
 
       timeSlotsTable.appendChild(row);
@@ -74,41 +76,6 @@ async function updateRoomDisplay() {
   } catch (err) {
     console.error("Failed to load room data:", err);
     alert("Unable to fetch time slots. Please try again.");
-  }
-}
-
-async function loadReservationHistory() {
-  const loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
-  if (!loggedIn) {
-    alert("User not logged in.");
-    return;
-  }
-
-  const userId = loggedIn._id;     
-
-  const historyList = document.getElementById("historyList");
-  historyList.innerHTML = "";
-
-  try {
-    const res = await fetch(`/api/reservations?user=${encodeURIComponent(userId)}`);
-    const reservations = await res.json();
-
-    if (reservations.length === 0) {
-      historyList.innerHTML = "<li>No past reservations.</li>";
-      return;
-    }
-
-    reservations.forEach(r => {
-      const li = document.createElement("li");
-      li.className = "flex flex-col px-3 py-2 rounded bg-white";
-      li.innerHTML =
-        `<span>${r.room} | ${r.time} | ${r.date}</span>
-         <span class="text-gray-500 text-xs">${r.seat}</span>`;
-      historyList.appendChild(li);
-    });
-  } catch (err) {
-    console.error(err);
-    historyList.innerHTML = "<li>Failed to load history.</li>";
   }
 }
 
@@ -141,7 +108,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   updateRoomDisplay();
-  loadReservationHistory();
 
   //-- loads default room on load of main--//
   const defaultButton = Array.from(roomButtons).find(btn => btn.textContent.trim() === currentRoom);
