@@ -56,27 +56,50 @@ async function loadReservations(tabName) {
     }
 
     const now = new Date();
-    const filtered = reservations.filter(r => {
-      const resDate = new Date(r.date);
-      return tabName === 'upcoming' ? resDate >= now : resDate < now;
-    });
-
+    const filtered = reservations
+      .filter(r => {
+        const resDate = new Date(r.date);
+        return tabName === 'upcoming' ? resDate >= now : resDate < now;
+      })
+      .sort((a, b) => new Date(a.date) - new Date(b.date));
     if (!filtered.length) {
       container.innerHTML = `<div class="text-center text-gray-500">No ${tabName} reservations.</div>`;
       return;
     }
 
-    filtered.forEach((r) => {
+    let lastPrintedMonth = "";
+    let i = 0;
+
+    while (i < filtered.length) {
+      const r = filtered[i];
       const dateObj = new Date(r.date);
       const weekday = dateObj.toLocaleDateString("en-US", { weekday: "short" });
       const day = dateObj.getDate();
       const monthYear = dateObj.toLocaleDateString("en-US", { month: "long", year: "numeric" });
-      const requestDate = "2025-06-02"; // hardcoded
+
+      if (monthYear !== lastPrintedMonth) {
+        const monthHeader = document.createElement("h2");
+        monthHeader.className = "text-2xl font-bold text-gray-700 mx-30";
+        monthHeader.textContent = monthYear;
+        container.appendChild(monthHeader);
+        lastPrintedMonth = monthYear;
+      }
+
+      const seatNumbers = [];
+      let j = i;
+      while (
+        j < filtered.length &&
+        filtered[j].date === r.date &&
+        filtered[j].time === r.time &&
+        filtered[j].roomCode === r.roomCode
+      ) {
+        seatNumbers.push(filtered[j].seatNumber);
+        j++;
+      }
 
       const div = document.createElement("div");
       div.className = "flex flex-col gap-4 mb-12";
       div.innerHTML = `
-        <h2 class="text-2xl font-bold text-gray-700 mx-30">${monthYear}</h2>
         <div class="flex items-center justify-between bg-white p-4 mx-30 rounded-lg shadow">
           <div class="flex mx-4 gap-6 items-center">
             <div class="text-center">
@@ -89,48 +112,49 @@ async function loadReservations(tabName) {
               <p class="text-gray-500">${r.roomCode}</p>
             </div>
             <div class="text-sm text-gray-800 mx-20">
-              <p>Seat No. ${r.seatNumber}</p>
-              <p>${r.reservedBy || username}</p>
+              <p>Seat No. ${seatNumbers.join(', ')}</p>
+              <p>${r.reservedBy}</p>
             </div>
           </div>
           <div class="flex gap-6 items-end items-center">
             <div class="flex flex-col text-sm text-gray-800 mx-20 gap-y-2">
               <p class="bg-green-100 rounded-full px-2 text-xs font-semibold text-center">
-                Requested ${requestDate}
+                Requested ${r.reservationDate}
               </p>
               <p class="bg-green-100 rounded-full px-2 text-xs font-semibold text-center">
-                ${r.reservedBy || username}
+                ${r.reservedBy}
               </p>
             </div>
             ${tabName === 'upcoming' ? `
             <div class="flex self-center relative">
-                <button class="edit bg-gray-100 px-3 py-1 rounded-md text-sm shadow-sm hover:bg-green-100">
+              <button class="edit bg-gray-100 px-3 py-1 rounded-md text-sm shadow-sm hover:bg-green-100">
                 Edit this reservation
-                </button>
-                <div class="dropdown absolute mt-7 w-48 bg-white rounded-md shadow-lg border border-gray-200 hidden z-100">
+              </button>
+              <div class="dropdown absolute mt-7 w-48 bg-white rounded-md shadow-lg border border-gray-200 hidden z-100">
                 <ul class="py-1 text-sm text-gray-700">
-                    <li><a href="/seating" class="block px-4 py-2 hover:bg-gray-100">Edit</a></li>
-                    <li>
-                    <a href="#" class="block px-4 py-2 text-red-500 hover:bg-red-100" onclick="cancelReservation('${r.roomCode}', '${r.date}', '${r.time}', ${r.seatNumber}, this)">
-                        Cancel
+                  <li><a href="/seating" class="block px-4 py-2 hover:bg-gray-100">Edit</a></li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-red-500 hover:bg-red-100"
+                      onclick="cancelReservation('${r.roomCode}', '${r.date}', '${r.time}', ${r.seatNumber}, this)">
+                      Cancel
                     </a>
-                    </li>
+                  </li>
                 </ul>
-                </div>
-            </div>
-            ` : ''}
+              </div>
+            </div>` : ''}
           </div>
         </div>
       `;
 
       container.appendChild(div);
-    });
-
+      i = j;
+    }
   } catch (err) {
     console.error(err);
     container.innerHTML = `<div class="text-center text-red-500">Error loading reservations.</div>`;
   }
 }
+
 window.cancelReservation = async function cancelReservation(roomCode, date, time, seatNumber, el) {
   if (!confirm("Are you sure you want to cancel this reservation?")) return;
 

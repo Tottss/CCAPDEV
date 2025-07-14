@@ -127,7 +127,8 @@ router.get('/view_reservation/:username', async (req, res) => {
                 date: dateEntry.date,
                 time: slot.time,
                 seatNumber: seat.seatNumber,
-                reservedBy: seat.reservedBy
+                reservedBy: seat.reservedBy,
+                reservationDate: seat.reservationDate
               });
             }
           });
