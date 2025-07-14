@@ -127,8 +127,9 @@ router.get('/view_reservation/:username', async (req, res) => {
                 date: dateEntry.date,
                 time: slot.time,
                 seatNumber: seat.seatNumber,
+                isAnnonymous: seat.isAnonymous ? 'Anonymous' : 'Public',
                 reservedBy: seat.reservedBy,
-                reservationDate: seat.reservationDate
+                reservationDate: seat.reservationDate,
               });
             }
           });

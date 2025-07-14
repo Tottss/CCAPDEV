@@ -95,7 +95,8 @@ document.getElementById("reserveButton").addEventListener("click", async () => {
             date,
             time,
             seats: Array.from(selectedSeats),
-            reservedBy: currentUser.username, isAnonymous
+            reservedBy: currentUser.username, isAnonymous,
+            reservationDate: new Date().toISOString().split('T')[0]
         };
 
         const response = await fetch("/api/reserve", {

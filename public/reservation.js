@@ -122,7 +122,7 @@ async function loadReservations(tabName) {
                 Requested ${r.reservationDate}
               </p>
               <p class="bg-green-100 rounded-full px-2 text-xs font-semibold text-center">
-                ${r.reservedBy}
+                ${r.isAnnonymous}
               </p>
             </div>
             ${tabName === 'upcoming' ? `

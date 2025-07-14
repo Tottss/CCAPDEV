@@ -60,7 +60,7 @@ router.get('/api/rooms/:room/:date/:time', async (req, res) => { // fetches deta
 });
 
 router.post('/api/reserve', async (req, res) => {
-  const { room, date, time, seats, reservedBy, isAnonymous } = req.body;
+  const { room, date, time, seats, reservedBy, isAnonymous, reservationDate } = req.body;
 
   if (!room || !date || !time || !Array.isArray(seats) || seats.length === 0) {
     return res.status(400).json({ message: "Missing reservation data." });
@@ -90,6 +90,7 @@ router.post('/api/reserve', async (req, res) => {
         seat.isReserved = true;
         seat.reservedBy = reservedBy;
         seat.isAnonymous = isAnonymous;
+        seat.reservationDate = reservationDate;
         if (!slot.reservedSeats.includes(seat.seatNumber)) {
           slot.reservedSeats.push(seat.seatNumber);
         }
