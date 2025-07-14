@@ -35,6 +35,22 @@ function switchTab(tabName) {
 
   loadReservations(tabName);
 }
+// helper function to print 
+function getSeatLabel(seatNumber) {
+  const rows = ['A', 'B', 'C', 'D', 'E', 'F'];
+  const seatsPerRow = { A: 6, B: 6, C: 6, D: 6, E: 6, F: 5 };
+
+  let count = 0;
+  for (const row of rows) {
+    const rowSeats = seatsPerRow[row];
+    if (seatNumber <= count + rowSeats) {
+      return `${row}${seatNumber - count}`;
+    }
+    count += rowSeats;
+  }
+
+  return `?${seatNumber}`;
+}
 
 async function loadReservations(tabName) {
   const loggedInUser = JSON.parse(localStorage.getItem("loggedIn"));
@@ -112,7 +128,7 @@ async function loadReservations(tabName) {
               <p class="text-gray-500">${r.roomCode}</p>
             </div>
             <div class="text-sm text-gray-800 mx-20">
-              <p>Seat No. ${seatNumbers.join(', ')}</p>
+              <p>Seat No. ${seatNumbers.map(getSeatLabel).join(', ')}</p>
               <p>${r.reservedBy}</p>
             </div>
           </div>
@@ -135,13 +151,13 @@ async function loadReservations(tabName) {
                   <li>
                   <a href="/seating?room=${r.roomCode}&date=${r.date}&time=${encodeURIComponent(r.time)}"
                     class="block px-4 py-2 hover:bg-gray-100">
-                    Edit
+                    Add Seats
                     </a>
                   </li>
                   <li>
                     <a href="#" class="block px-4 py-2 text-red-500 hover:bg-red-100"
                       onclick="cancelReservation('${r.roomCode}', '${r.date}', '${r.time}', '${r.reservedBy}', this)">
-                      Cancel
+                      Cancel Reservation
                     </a>
                   </li>
                 </ul>
