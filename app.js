@@ -33,7 +33,9 @@ hbs.registerPartials(path.join(__dirname, 'views', 'partials'));
 const roomRoutes = require('./routes/rooms');
 const userRoutes = require('./routes/userRoutes');
 const reservationsRoutes = require('./routes/reservations');
+const adminRoutes = require('./routes/adminRoutes');
 
+app.use('/', adminRoutes);
 app.use('/api/user', userRoutes);
 app.use('/', roomRoutes); 
 app.use('/api/reservations', reservationsRoutes);

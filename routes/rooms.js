@@ -27,17 +27,6 @@ router.get('/api/rooms/:roomCode/:date', async (req, res) => { // fetches all ti
   }
 });
 
-router.get('/api/current-user', (req, res) => {
-  if (!req.session.user) {
-    return res.status(401).json({ error: 'Unauthorized' });
-  }
-  
-  res.json({
-    username: req.session.user.username,
-    email: req.session.user.email
-  });
-});
-
 router.get('/api/rooms/:room/:date/:time', async (req, res) => { // fetches details of one timeslot
   const { room, date } = req.params;
   const time = decodeURIComponent(req.params.time);

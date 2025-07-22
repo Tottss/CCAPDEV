@@ -5,8 +5,8 @@ const time = params.get("time");
 // const professor = params.get("professor");
 
 const selectedSeats = new Set();
-
 let currentMode = "reserve";
+let seatsData = [];
 
 const modeButtons = document.querySelectorAll(".mode-btn");
 
@@ -17,90 +17,80 @@ modeButtons.forEach(btn => {
         modeButtons.forEach(b => b.classList.remove("ring", "ring-offset-2", "ring-black"));
         btn.classList.add("ring", "ring-offset-2", "ring-black");
 
+        // mode switching resets layout to prevent overlapping
+        selectedSeats.clear();
+        populateSeats(seatsData);
+
         console.log("Current mode:", currentMode);
     });
 });
 
-// const seats = document.querySelectorAll('button');
-
-// seats.forEach(button => {
-//     if (button.id !== 'saveButton' && !button.classList.contains('mode-btn')) {
-//         button.addEventListener('click', () => {
-//             if (currentMode === "reserve") {
-//                 button.classList.add('bg-green-800', 'text-white');
-//                 button.classList.remove('bg-red-700');
-//             } else if (currentMode === "remove") {
-//                 button.classList.remove('bg-green-800', 'bg-red-700', 'text-white');
-//                 button.classList.add('bg-gray-300');
-//             } else if (currentMode === "block") {
-//                 button.classList.add('bg-red-700', 'text-white');
-//                 button.classList.remove('bg-green-800');
-//             }
-//         });
-//     }
-// });
-
 // update seat buttons dynamically
-function populateSeats(seatsData) {
-  seatsData.forEach(seat => {
+function populateSeats(seats) {
+  seatsData = seats;
+
+  seats.forEach(seat => {
     const btn = document.getElementById(seat.seatNumber);
     if (!btn) return;
 
-    // reset button classes and events
-    btn.className = 'w-14 h-14 rounded hover:bg-gray-400';
-    const newBtn = btn.cloneNode(true);
-    btn.replaceWith(newBtn); // now newBtn is the real element in DOM
+    const cleanBtn = btn.cloneNode(true);
+    btn.replaceWith(cleanBtn);
+    cleanBtn.className = 'w-14 h-14 bg-gray-300 rounded hover:bg-gray-400';
+    cleanBtn.disabled = false;
 
     if (seat.isBlocked) { // blocked
-        newBtn.classList.add('bg-black', 'text-white', 'cursor-not-allowed');
-        newBtn.disabled = true;
-        return;
+      cleanBtn.classList.add('bg-black', 'text-white', 'cursor-pointer');
+      return;
     }
 
     if (seat.isReserved) { // reserved
-      newBtn.classList.add('bg-red-500', 'text-white', 'cursor-pointer');
-
+      cleanBtn.classList.add('bg-red-500', 'text-white', 'cursor-pointer');
       const displayName = seat.reservedBy || "Unknown";
 
-      newBtn.addEventListener('click', (e) => {
+      cleanBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        if (currentMode === "remove") {
-            if (seat.isReserved) {
-                newBtn.classList.remove('bg-red-500', 'text-white');
-                newBtn.classList.add('bg-gray-300');
-                selectedSeats.add(seat.seatNumber);
-            }
-            else {
-                alert("Only reserved seats can be removed.")
-            }   
+
+        if (currentMode === 'remove') {
+          if (selectedSeats.has(seat.seatNumber)) { /// deselect (go back to red bg)
+            cleanBtn.classList.remove('bg-gray-300', 'text-black');
+            cleanBtn.classList.add('bg-red-500', 'text-white');
+            selectedSeats.delete(seat.seatNumber);
+          }
+          else { // select (turn into default bg)
+            cleanBtn.classList.remove('bg-red-500', 'text-white');
+            cleanBtn.classList.add('bg-gray-300', 'text-black');
+            selectedSeats.add(seat.seatNumber);
+          }
         }
         else {
-            alert(`Reserved by: ${displayName}`);
+          alert(`Reserved by: ${displayName}`);
         }
       });
     } 
+    
     else { // untouched
-      newBtn.classList.add('bg-gray-300');
+      cleanBtn.addEventListener('click', () => {
 
-      newBtn.addEventListener('click', () => {
-        if (currentMode === "reserve") {
-            newBtn.classList.toggle('bg-green-800');
-            newBtn.classList.toggle('text-white');
+        if (currentMode === 'reserve') {
+          cleanBtn.classList.toggle('bg-green-800');
+          cleanBtn.classList.toggle('text-white');
         }
-        else if (currentMode === "block") {
-            newBtn.classList.toggle('bg-black');
-            newBtn.classList.toggle('text-white');
+        else if (currentMode === 'remove') {
+          alert('This seat is not reserved.');
+          return;
         }
-
-        if (currentMode === "reserve" || currentMode === "block") {
-            selectedSeats.has(seat.seatNumber)
-                ? selectedSeats.delete(seat.seatNumber)
-                : selectedSeats.add(seat.seatNumber);
+        else if (currentMode === 'block') {
+          cleanBtn.classList.toggle('bg-black');
+          cleanBtn.classList.toggle('text-white');
         }
+        selectedSeats.has(seat.seatNumber)
+          ? selectedSeats.delete(seat.seatNumber)
+          : selectedSeats.add(seat.seatNumber);
       });
     }
   });
 }
+
 
 // fetch reservation data from server (/api/rooms/:room/:data/:time)
 async function fetchSeatingData() {
@@ -121,7 +111,7 @@ async function fetchSeatingData() {
   }
 }
 
-// reserve button
+// save button
 document.getElementById("saveButton").addEventListener("click", async () => {
 
   const studentName = document.getElementById("studentName").value;
@@ -136,6 +126,14 @@ document.getElementById("saveButton").addEventListener("click", async () => {
         return;
     }
 
+    // confirmation for removing reservations
+    if (currentMode === "remove") {
+      const confirmMessage = `Are you sure you want to remove ${selectedSeats.size} seat(s)?`;
+      if (!confirm(confirmMessage)) {
+        return;
+      }
+    }
+
     try {
         const payload = {
             room,
@@ -143,8 +141,11 @@ document.getElementById("saveButton").addEventListener("click", async () => {
             time,
             seats: Array.from(selectedSeats),
             action: currentMode,
-            reservedBy: studentName || "Student"
+            reservedBy: studentName,
+            reservationDate: new Date().toISOString().split('T')[0]
         };
+
+        console.log("Sending payload:", payload); // debugging
 
         const response = await fetch("/api/admin/reserve", {
             method: "POST",
@@ -155,6 +156,7 @@ document.getElementById("saveButton").addEventListener("click", async () => {
         });
 
         if (response.ok) {
+          const actionWord = currentMode === 'reserve' ? 'reserved' : currentMode === 'remove' ? 'removed' : 'blocked';
             alert("Operation successful!");
             window.location.reload();
         }
@@ -164,7 +166,7 @@ document.getElementById("saveButton").addEventListener("click", async () => {
         }
     } catch (err) {
         console.error(err);
-        alert("Operation failed.");
+        alert("Operation failed:" + err.message);
     }
 });
 
