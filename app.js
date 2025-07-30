@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const hbs = require('hbs');
 const mongoose = require('mongoose');
+const session = require('express-session');
 const User = require('./models/User');
 const addSampleData = require('./sampledata');
 
@@ -19,6 +20,12 @@ mongoose.connect('mongodb://localhost:27017/computerReservationDB', {
     addSampleData();
   }
 }).catch(err => console.log("MongoDB error:", err));
+
+app.use(session({ // session
+  secret: 'secretKey123', // store securely in env var
+  resave: false, // don't save unchanged sessions
+  saveUninitialized: true, // create session even if empty
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
