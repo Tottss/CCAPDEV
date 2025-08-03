@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => { // login form submission
         }
 
         else {
-          errorElement.textContent = result || "Incorrect username or password";
+          errorElement.textContent = result.error || "Incorrect username or password";
           usernameInput.value = "";
           passwordInput.value = "";
           usernameInput.focus();

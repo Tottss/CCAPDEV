@@ -49,10 +49,10 @@ router.post('/login', async(req, res) => {
     const user = await User.findOne({ username });
 
     if (!user) {
-      return res.status(401).send('Invalid username');
+      return res.status(401).json({error:'Invalid username'});
     }
     if (!(await user.comparePassword(password))) { // compares hashed passwords
-      return res.status(401).send('Invalid password');
+      return res.status(401).json({error:'Invalid password'});
     }
 
     req.session.userId = user._id;
@@ -60,7 +60,7 @@ router.post('/login', async(req, res) => {
   }
   catch (err) {
     console.error(err);
-    res.status(500).send('Server Error');
+    res.status(500).json({error:'Server Error'});
   }
 });
 
