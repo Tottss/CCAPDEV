@@ -53,12 +53,14 @@ function getSeatLabel(seatNumber) {
 }
 
 async function loadReservations(tabName) {
-  const loggedInUser = JSON.parse(localStorage.getItem("loggedIn"));
-  if (!loggedInUser || !loggedInUser.username) {
-    return window.location.href = "/login";
+  const me = await fetch('/api/user/me', { credentials: 'include' });
+  if (!me.ok) {
+    return (window.location.href = "/login");
   }
+  
+  const user = await me.json();
+  const username = user.username;
 
-  const username = loggedInUser.username;
   const container = document.getElementById(`${tabName}-tab`);
   container.innerHTML = "";
 

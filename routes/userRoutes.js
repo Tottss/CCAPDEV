@@ -103,6 +103,22 @@ router.post('/signup', async(req, res) => {
   }
 });
 
+router.post('/logout', (req, res) => {
+  if (!req.session) {
+    res.clearCookie('connect.sid');
+    return res.status(200).json({ message: "No active session" });
+  }
+
+  req.session.destroy(err => {
+    if (err) {
+      return res.status(500).json({ message: "Logout failed" });
+    }
+
+    res.clearCookie('connect.sid');
+    return res.status(200).json({ message: "Logged out" });
+  });
+});
+
 // View all registered users (for testing)
 router.get('/users', async (req, res) => {
   try {
@@ -114,7 +130,7 @@ router.get('/users', async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', requireAuth, async (req, res) => {
   try {
     const user = await User.findById(req.params.id).lean();
     if (!user) return res.status(404).json({ message: 'User not found' });
@@ -125,7 +141,7 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/:id', async (req, res) => {
+router.post('/:id', requireAuth, async (req, res) => {
   try {
     const updates = req.body;
     const user = await User.findByIdAndUpdate(req.params.id, updates, { new: true }).lean();
@@ -138,7 +154,7 @@ router.post('/:id', async (req, res) => {
 });
 
 // view reservations fetch db
-router.get('/view_reservation/:username', async (req, res) => {
+router.get('/view_reservation/:username', requireAuth, async (req, res) => {
   const username = req.params.username;
 
   try {
@@ -176,7 +192,7 @@ router.get('/view_reservation/:username', async (req, res) => {
 // btw the implementation of this just sets
 // reservedBy and reservationDate to null
 // it doesnt actually delete the record
-router.delete('/cancel_reservation', async (req, res) => {
+router.delete('/cancel_reservation', requireAuth, async (req, res) => {
   const { roomCode, date, time, reservedBy } = req.body;
 
   try {
@@ -218,35 +234,9 @@ router.delete('/cancel_reservation', async (req, res) => {
   }
 });
 
-// router.get('/logout', (req, res) => {
-//   req.session.destroy(() => { // destory session
-//     res.redirect('/login');
-//   });
-// });
-
-router.get('/logout', (req, res) => {
-  if (!req.session) {
-    return res.redirect('/login');
-  }
-
-  try {
-    req.session.destroy(err => {
-      if (err) {
-        console.error('Session destroy error:', err);
-      }
-      res.clearCookie('connect.sid');
-      res.redirect('/login');
-    });
-  } catch (err) {
-    console.error('Exception during session destroy:', err);
-    res.clearCookie('connect.sid');
-    res.redirect('/login');
-  }
-});
 
 
-router.post('/:id/deleteWithPassword', async (req, res) => {
-  console.log("Delete request received for:", req.params.id);
+router.post('/:id/deleteWithPassword', requireAuth, async (req, res) => {
   try {
     const { password } = req.body;
     const user = await User.findById(req.params.id);
@@ -256,11 +246,14 @@ router.post('/:id/deleteWithPassword', async (req, res) => {
     if (!isMatch) return res.status(401).json({ error: "Incorrect password." });
 
     await User.findByIdAndDelete(req.params.id);
-    return res.status(200).json({ message: "User deleted." });
+    req.session.destroy(err => {
+      if (err) return res.status(500).json({ error: "Failed to logout" });
+      res.clearCookie('connect.sid', { path: '/' });
+      return res.status(200).json({ message: "Account deleted, redirect to login" });
+    });
   } catch (err) {
-    await logError(err, 'POST /:id/deleteWithPassword');
-    console.error("Error in deleteWithPassword route:", err);
     return res.status(500).json({ error: "Server error." });
   }
 });
+
 module.exports = router;
