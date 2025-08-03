@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
+const logError = require('../logError');
+
 const userSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
@@ -26,6 +28,7 @@ userSchema.pre('save', async function (next) {
     this.password = await bcrypt.hash(this.password, salt); // hashes password combined with the salt, and replaces plaintext password
     next();
   } catch (err) {
+    await logError(err, 'userSchema.pre save');
     next(err);
   }
 });
