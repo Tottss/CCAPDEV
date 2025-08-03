@@ -91,6 +91,59 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
+  const deleteBtn = document.getElementById("deleteProfile");
+const deleteModal = document.getElementById("deleteModal");
+const cancelDeleteBtn = document.getElementById("cancelDelete");
+const deleteForm = document.getElementById("deleteForm");
+const deletePasswordInput = document.getElementById("deletePassword");
+const userId2 = JSON.parse(localStorage.getItem("loggedIn"))?._id;
+
+// Show modal on delete click
+deleteBtn.addEventListener("click", () => {
+  deletePasswordInput.value = "";
+  deleteModal.classList.remove("hidden");
+});
+
+// Cancel button closes modal
+cancelDeleteBtn.addEventListener("click", () => {
+  deleteModal.classList.add("hidden");
+});
+
+// Handle form submission
+deleteForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const password = deletePasswordInput.value;
+
+  const userId = JSON.parse(localStorage.getItem("loggedIn"))?._id;
+  console.log("Trying to delete user:", userId);
+
+  try {
+    const res = await fetch(`/api/user/${userId}/deleteWithPassword`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ password })
+    });
+
+    console.log("Response status:", res.status);
+
+    const result = await res.json();
+    console.log("Response body:", result);
+
+    if (res.ok) {
+      alert("Profile deleted successfully.");
+      localStorage.removeItem("loggedIn");
+      window.location.href = "/";
+    } else {
+      alert(result.error || "Incorrect password.");
+    }
+  } catch (err) {
+    console.error("DELETE ERROR:", err);
+    alert("An error occurred while deleting your account.");
+  }
+
+  deleteModal.classList.add("hidden");
+});
+
   const pfpForm = document.getElementById("pfpForm");
   if (pfpForm) {
     pfpForm.addEventListener("submit", async (e) => {
