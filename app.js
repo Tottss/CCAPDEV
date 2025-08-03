@@ -12,8 +12,8 @@ const app = express();
 app.use(session({ // session
   secret: 'secretKey123', // store securely in env var
   resave: false, // don't save unchanged sessions
-  saveUninitialized: true, // create session even if empty
-  cookie: { maxAge: 604800000} // 3 weeks
+  saveUninitialized: false, // create session even if empty
+  cookie: { secure: false, maxAge: 604800000} // 3 weeks
 }));
 
 app.use(express.json());
