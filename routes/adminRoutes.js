@@ -3,6 +3,7 @@ const router = express.Router();
 const Room = require('../models/Classes'); 
 const { requireAuth, requireRole } = require('../middleware/authentication');
 
+const logError = require('../logError');
 
 router.get('/api/rooms/:roomCode/:date', async (req, res) => { // fetches all timeslots for a date
   const { roomCode, date } = req.params;
@@ -22,6 +23,7 @@ router.get('/api/rooms/:roomCode/:date', async (req, res) => { // fetches all ti
 
     res.json(slots);
   } catch (err) {
+    await logError(err, 'GET /api/rooms/:roomCode/:date');
     console.error(err);
     res.status(500).json({ error: 'Server error' });
   }
