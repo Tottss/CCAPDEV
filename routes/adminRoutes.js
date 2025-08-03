@@ -5,6 +5,22 @@ const { requireAuth, requireRole } = require('../middleware/authentication');
 
 const logError = require('../logError');
 
+router.post('/logout', (req, res) => {
+  if (!req.session) {
+    res.clearCookie('connect.sid');
+    return res.status(200).json({ message: "No active session" });
+  }
+
+  req.session.destroy(err => {
+    if (err) {
+      return res.status(500).json({ message: "Logout failed" });
+    }
+
+    res.clearCookie('connect.sid');
+    return res.status(200).json({ message: "Logged out" });
+  });
+});
+
 router.get('/api/rooms/:roomCode/:date', async (req, res) => { // fetches all timeslots for a date
   const { roomCode, date } = req.params;
 
