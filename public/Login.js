@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => { // login form submission
           body: JSON.stringify({ username, password })
         });
 
-        const result = await response.text(); // this used to be json, but now it returns text
+        const result = await response.json();
        
 
         if (response.ok) { // if successful login
