@@ -24,6 +24,7 @@ app.use(session({ // session
   secret: 'secretKey123', // store securely in env var
   resave: false, // don't save unchanged sessions
   saveUninitialized: true, // create session even if empty
+  cookie: { maxAge: 604800000} // 3 weeks
 }));
 
 app.use(express.json());
@@ -40,6 +41,15 @@ const roomRoutes = require('./routes/rooms');
 const userRoutes = require('./routes/userRoutes');
 const reservationsRoutes = require('./routes/reservations');
 const adminRoutes = require('./routes/adminRoutes');
+
+// basically when u undo page after destroying session, it doesnt show the page
+app.use((req, res, next) => {
+  res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
+  next();
+});
+
+const logoutScript = require('./middleware/logout');
+app.use(logoutScript);
 
 app.use('/', adminRoutes);
 app.use('/api/user', userRoutes);
