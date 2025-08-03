@@ -7,7 +7,6 @@ module.exports = (req, res, next) => {
           btn.addEventListener("click", async (e) => {
             e.preventDefault();
             try {
-              console.log("Logout button clicked");
               const response = await fetch("/api/user/logout", {
                 method: "POST",
                 credentials: "include"
