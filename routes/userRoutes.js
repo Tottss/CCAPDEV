@@ -218,10 +218,30 @@ router.delete('/cancel_reservation', async (req, res) => {
   }
 });
 
+// router.get('/logout', (req, res) => {
+//   req.session.destroy(() => { // destory session
+//     res.redirect('/login');
+//   });
+// });
+
 router.get('/logout', (req, res) => {
-  req.session.destroy(() => { // destory session
+  if (!req.session) {
+    return res.redirect('/login');
+  }
+
+  try {
+    req.session.destroy(err => {
+      if (err) {
+        console.error('Session destroy error:', err);
+      }
+      res.clearCookie('connect.sid');
+      res.redirect('/login');
+    });
+  } catch (err) {
+    console.error('Exception during session destroy:', err);
+    res.clearCookie('connect.sid');
     res.redirect('/login');
-  });
+  }
 });
 
 
