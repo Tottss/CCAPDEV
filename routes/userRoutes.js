@@ -5,13 +5,6 @@ const User = require('../models/User'); // adjust path if needed
 const Room = require('../models/Classes');
 const router = express.Router();
 
-function isAuthenticated(req, res, next) {
-  if (req.session.userId) {
-    return next();
-  }
-  res.redirect('/login');
-}
-
 // Multer setup for file uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -27,7 +20,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage });
 
 // Upload profile picture route
-router.post('/:id/pfp', isAuthenticated, upload.single('profilePicture'), async (req, res) => {
+router.post('/:id/pfp', upload.single('profilePicture'), async (req, res) => {
   try {
     const user = await User.findByIdAndUpdate(
       req.params.id,
@@ -55,14 +48,31 @@ router.post('/login', async(req, res) => {
       return res.status(401).json({error:'Invalid password'});
     }
 
-    req.session.userId = user._id;
-    res.json({ message: 'Login successful', user });
-  }
-  catch (err) {
-    console.error(err);
-    res.status(500).json({error:'Server Error'});
-  }
-});
+    req.session.user = {
+      id: user._id,
+      username: user.username,
+      role: user.role,
+      firstname: user.firstName,
+      lastname: user.lastName
+    };
+    req.session.save((err) => {
+      if (err) {
+        console.error("Session save error:", err);
+        return res.status(500).json({ error: 'Failed to save session' });
+      }
+      res.json({
+        message: 'Login successful',
+        user: {
+          username: user.username,
+          role: user.role
+        }
+      });
+  });
+  } catch (err) {
+      console.error(err);
+      res.status(500).json({error:'Server Error'});
+    }
+  });
 
 router.post('/signup', async(req, res) => {
   const { firstName, lastName, email, username, password } = req.body;
@@ -87,7 +97,7 @@ router.post('/signup', async(req, res) => {
 });
 
 // View all registered users (for testing)
-router.get('/users', isAuthenticated, async (req, res) => {
+router.get('/users', async (req, res) => {
   try {
     const users = await User.find().lean();
     res.render('partials/users', { users });
@@ -96,7 +106,7 @@ router.get('/users', isAuthenticated, async (req, res) => {
   }
 });
 
-router.get('/:id', isAuthenticated, async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const user = await User.findById(req.params.id).lean();
     if (!user) return res.status(404).json({ message: 'User not found' });
@@ -106,7 +116,7 @@ router.get('/:id', isAuthenticated, async (req, res) => {
   }
 });
 
-router.post('/:id', isAuthenticated, async (req, res) => {
+router.post('/:id', async (req, res) => {
   try {
     const updates = req.body;
     const user = await User.findByIdAndUpdate(req.params.id, updates, { new: true }).lean();
@@ -118,7 +128,7 @@ router.post('/:id', isAuthenticated, async (req, res) => {
 });
 
 // view reservations fetch db
-router.get('/view_reservation/:username', isAuthenticated, async (req, res) => {
+router.get('/view_reservation/:username', async (req, res) => {
   const username = req.params.username;
 
   try {
@@ -155,7 +165,7 @@ router.get('/view_reservation/:username', isAuthenticated, async (req, res) => {
 // btw the implementation of this just sets
 // reservedBy and reservationDate to null
 // it doesnt actually delete the record
-router.delete('/cancel_reservation', isAuthenticated, async (req, res) => {
+router.delete('/cancel_reservation', async (req, res) => {
   const { roomCode, date, time, reservedBy } = req.body;
 
   try {

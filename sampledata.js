@@ -48,7 +48,8 @@ async function addSampleData() {
       lastName: "Admin",
       email:"admin@dlsu.edu.ph",
       username: "Admin",
-      password: "1234"
+      password: "1234",
+      role: "admin"
     }
     ]
 

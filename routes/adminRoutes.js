@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Room = require('../models/Classes'); 
-
+const { requireAuth, requireRole } = require('../middleware/authentication');
 
 
 router.get('/api/rooms/:roomCode/:date', async (req, res) => { // fetches all timeslots for a date
@@ -48,7 +48,7 @@ router.get('/api/rooms/:room/:date/:time', async (req, res) => { // fetches deta
   }
 });
 
-router.post('/api/admin/reserve', async (req, res) => {
+router.post('/api/admin/reserve', requireAuth, requireRole('admin'), async (req, res) => {
   const { room, date, time, seats, action, reservedBy, reservationDate } = req.body;
 
   if (!room || !date || !time || !Array.isArray(seats) || seats.length === 0 || !action) {

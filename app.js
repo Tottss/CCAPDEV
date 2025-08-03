@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const User = require('./models/User');
 const addSampleData = require('./sampledata');
+const { requireAuth, requireRole } = require('./middleware/authentication');
 
 const app = express();
 const port = 3000;
@@ -53,31 +54,31 @@ app.get('/login', (req, res) => {
   res.render('login'); 
 });
 
-app.get('/signup', (req, res) => {
+app.get('/signup', requireAuth, requireRole('student'), (req, res) => {
   res.render('signup'); 
 });
 
-app.get('/profile', (req, res) => {
+app.get('/profile', requireAuth, requireRole('student'), (req, res) => {
   res.render('profile');
 });
 
-app.get('/seating', (req, res) => {
+app.get('/seating', requireAuth, requireRole('student'), (req, res) => {
   res.render('seating');
 });
 
-app.get('/reservations', (req, res) => {
+app.get('/reservations', requireAuth, requireRole('student'), (req, res) => {
   res.render('viewReservations');
 });
 
-app.get('/dashboard', (req, res) => {
+app.get('/dashboard', requireAuth, requireRole('student'), (req, res) => {
   res.render('main'); 
 });
 
-app.get('/admin', (req, res) => {
+app.get('/admin', requireAuth, requireRole('admin'), (req, res) => {
   res.render('adminmain'); 
 });
 
-app.get('/adminseating', (req, res) => {
+app.get('/adminseating', requireAuth, requireRole('admin'), (req, res) => {
   res.render('adminSeating'); 
 });
 
