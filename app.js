@@ -8,17 +8,6 @@ const addSampleData = require('./sampledata');
 const { requireAuth, requireRole } = require('./middleware/authentication');
 
 const app = express();
-const port = 3000;
-
-mongoose.connect('mongodb://localhost:27017/computerReservationDB', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(async () => {
-  console.log("MongoDB connected");
-
-    addSampleData(); // removed the checkers since it should always delete everything then insert sample data
-
-}).catch(err => console.log("MongoDB error:", err));
 
 app.use(session({ // session
   secret: 'secretKey123', // store securely in env var
@@ -64,7 +53,7 @@ app.get('/login', (req, res) => {
   res.render('login'); 
 });
 
-app.get('/signup', requireAuth, requireRole('student'), (req, res) => {
+app.get('/signup', (req, res) => {
   res.render('signup'); 
 });
 
@@ -92,6 +81,26 @@ app.get('/adminseating', requireAuth, requireRole('admin'), (req, res) => {
   res.render('adminSeating'); 
 });
 
-app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
-});
+// exported function to connect to DB (tests will call this with their URI)
+async function connectDb(uri) {
+  if (mongoose.connection.readyState === 0) {
+    await mongoose.connect(uri); // no deprecated options
+    console.log('MongoDB connected');
+    // only insert sample data in non-test environment
+    if (process.env.NODE_ENV !== 'test') {
+      await addSampleData();
+    }
+  }
+}
+
+module.exports = { app, connectDb };
+
+// Only start server in non-test mode
+if (process.env.NODE_ENV !== 'test') {
+  const port = process.env.PORT || 3000;
+  const mongoUri = process.env.MONGO_URI || 'mongodb://localhost:27017/computerReservationDB';
+  connectDb(mongoUri).catch(err => console.error('MongoDB error:', err));
+  app.listen(port, () => {
+    console.log(`Server is running at http://localhost:${port}`);
+  });
+}
