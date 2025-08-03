@@ -1,10 +1,11 @@
+import { loadHeaderPfp } from './loadHeaderPfp.js';
 const params = new URLSearchParams(window.location.search);
 const room = params.get("room");
 const date = params.get("date");
 const time = params.get("time");
 // const professor = params.get("professor");
 
-const currentUser = JSON.parse(localStorage.getItem("loggedIn") || "{}");
+let currentUser = null;
 const selectedSeats = new Set();
 
 // update seat buttons dynamically
@@ -64,18 +65,26 @@ async function fetchSeatingData() {
 }
 
 // initialize on page load
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
   if (!room || !date || !time) {
     alert("Missing reservation details in the URL.");
     return;
   }
+
+  const meRes = await fetch('/api/user/me', { credentials: 'include' });
+  if (!meRes.ok) {
+    window.location.href = "/login";
+    return;
+  }
+  currentUser = await meRes.json();
 
   // update reservation summary UI
   document.getElementById("reservation-room").textContent = room;
   document.getElementById("reservation-date").textContent = date;
   document.getElementById("reservation-time").textContent = time;
   // document.getElementById('reservation-professor').textContent = professor;
-
+  
+  await loadHeaderPfp();
   fetchSeatingData();
 });
 
