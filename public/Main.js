@@ -78,22 +78,28 @@ async function updateRoomDisplay() {
 }
 
 async function loadReservationHistory() {
-  const loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
-  if (!loggedIn) {
-    alert("User not logged in.");
-    return;
-  }
-
-  const userId = loggedIn.firstname;     
-  console.log("Loading reservation history for user:", userId);
   const historyList = document.getElementById("historyList");
   historyList.innerHTML = "";
 
   try {
-    const res = await fetch(`/api/reservations?user=${encodeURIComponent(userId)}`);
+    // Ask the server for the current user
+    const meRes = await fetch('/api/user/me', { credentials: 'include' });
+    if (!meRes.ok) {
+      alert("User not logged in.");
+      window.location.href = '/login'; // optional: force redirect
+      return;
+    }
+    const user = await meRes.json();
+
+    console.log("Loading reservation history for user:", user.firstName);
+
+    // Fetch reservations tied to that user
+    const res = await fetch(`/api/reservations?user=${encodeURIComponent(user.firstName)}`, {
+      credentials: 'include'
+    });
     const reservations = await res.json();
 
-    if (reservations.length === 0) {
+    if (!Array.isArray(reservations) || reservations.length === 0) {
       historyList.innerHTML = "<li>No past reservations.</li>";
       return;
     }
@@ -101,13 +107,14 @@ async function loadReservationHistory() {
     reservations.forEach(r => {
       const li = document.createElement("li");
       li.className = "flex flex-col px-3 py-2 rounded bg-white";
-      li.innerHTML =
-        `<span>${r.room} | ${r.time} | ${r.date}</span>
-         <span class="text-gray-500 text-xs">${r.seat}</span>`;
+      li.innerHTML = `
+        <span>${r.room} | ${r.time} | ${r.date}</span>
+        <span class="text-gray-500 text-xs">${r.seat}</span>
+      `;
       historyList.appendChild(li);
     });
   } catch (err) {
-    console.error(err);
+    console.error("Failed to load reservation history:", err);
     historyList.innerHTML = "<li>Failed to load history.</li>";
   }
 }

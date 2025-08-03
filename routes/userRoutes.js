@@ -5,6 +5,7 @@ const User = require('../models/User'); // adjust path if needed
 const Room = require('../models/Classes');
 const router = express.Router();
 const bcrypt = require('bcrypt');
+const { requireAuth, requireRole } = require('../middleware/authentication');
 
 // Multer setup for file uploads
 const storage = multer.diskStorage({
@@ -37,6 +38,11 @@ router.post('/:id/pfp', upload.single('profilePicture'), async (req, res) => {
   console.log("Received file:", req.file);
 });
 
+router.get('/me', requireAuth, async (req, res) => {
+  const user = await User.findById(req.session.user.id);
+  res.json(user);
+});
+
 router.post('/login', async(req, res) => {
   const { username, password } = req.body;
   try {
@@ -56,19 +62,14 @@ router.post('/login', async(req, res) => {
       firstname: user.firstName,
       lastname: user.lastName
     };
-    req.session.save((err) => {
+
+    req.session.save(err => {
       if (err) {
         console.error("Session save error:", err);
-        return res.status(500).json({ error: 'Failed to save session' });
+        return res.status(500).json({ error: "Failed to save session" });
       }
-      res.json({
-        message: 'Login successful',
-        user: {
-          username: user.username,
-          role: user.role
-        }
-      });
-  });
+      res.json({ message: 'Login successful', user: req.session.user });
+    });
   } catch (err) {
       console.error(err);
       res.status(500).json({error:'Server Error'});

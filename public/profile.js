@@ -13,12 +13,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     });
   }
 
-  const loggedIn = JSON.parse(localStorage.getItem("loggedIn"));
-  if (!loggedIn) return;
+  const me = await fetch('/api/user/me', { credentials: 'include' });
+  if (!me.ok) {
+    window.location.href = '/login';
+    return;
+  }
+  const user = await me.json();
+  const userId = user._id;
 
-  const userId = loggedIn._id;
-  const res = await fetch(`/api/user/${userId}`);
-  const user = await res.json();
+  const res = await fetch(`/api/reservations?user=${encodeURIComponent(user.firstName)}`, {
+    credentials: 'include'
+  });
 
   const profileImg = document.getElementById("profilePfp");
   if (profileImg) {
@@ -96,7 +101,7 @@ const deleteModal = document.getElementById("deleteModal");
 const cancelDeleteBtn = document.getElementById("cancelDelete");
 const deleteForm = document.getElementById("deleteForm");
 const deletePasswordInput = document.getElementById("deletePassword");
-const userId2 = JSON.parse(localStorage.getItem("loggedIn"))?._id;
+const userId2 = user._id;
 
 // Show modal on delete click
 deleteBtn.addEventListener("click", () => {
@@ -114,7 +119,7 @@ deleteForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const password = deletePasswordInput.value;
 
-  const userId = JSON.parse(localStorage.getItem("loggedIn"))?._id;
+  const userId = user._id;
   console.log("Trying to delete user:", userId);
 
   try {
