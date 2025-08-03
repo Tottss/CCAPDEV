@@ -7,6 +7,8 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const { requireAuth, requireRole } = require('../middleware/authentication');
 
+const logError = require('../logError');
+
 // Multer setup for file uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -32,6 +34,7 @@ router.post('/:id/pfp', upload.single('profilePicture'), async (req, res) => {
     if (!user) return res.status(404).send("User not found");
     res.send({ message: "Profile picture updated", filename: req.file.filename });
   } catch (err) {
+    await logError(err, 'POST /:id/pfp');
     console.error(err);
     res.status(500).send("Error uploading profile picture");
   }
@@ -71,6 +74,7 @@ router.post('/login', async(req, res) => {
       res.json({ message: 'Login successful', user: req.session.user });
     });
   } catch (err) {
+    await logError(err, 'POST /login');
       console.error(err);
       res.status(500).json({error:'Server Error'});
     }
@@ -93,6 +97,7 @@ router.post('/signup', async(req, res) => {
   }
 
   catch (err) {
+    await logError(err, 'POST /signup');
     console.error(err);
     res.status(500).send('Server Error during signup');
   }
@@ -104,6 +109,7 @@ router.get('/users', async (req, res) => {
     const users = await User.find().lean();
     res.render('partials/users', { users });
   } catch (err) {
+    await logError(err, 'POST /signup');
     res.status(500).send("Error fetching users.");
   }
 });
@@ -114,6 +120,7 @@ router.get('/:id', async (req, res) => {
     if (!user) return res.status(404).json({ message: 'User not found' });
     res.json(user);
   } catch (err) {
+    await logError(err, 'GET /users');
     res.status(500).json({ message: 'Server error', error: err });
   }
 });
@@ -125,6 +132,7 @@ router.post('/:id', async (req, res) => {
     if (!user) return res.status(404).json({ message: 'User not found' });
     res.json(user);
   } catch (err) {
+    await logError(err, 'GET /:id');
     res.status(500).json({ message: 'Server error', error: err });
   }
 });
@@ -159,6 +167,7 @@ router.get('/view_reservation/:username', async (req, res) => {
 
     res.json(userReservations);
   } catch (err) {
+    await logError(err, 'GET /view_reservation/:username');
     console.error("Error fetching reservations:", err);
     res.status(500).send("Error fetching reservations");
   }
@@ -203,6 +212,7 @@ router.delete('/cancel_reservation', async (req, res) => {
 
     res.json({ message: `${removedCount} seat(s) cancelled successfully.` });
   } catch (err) {
+    await logError(err, 'DELETE /cancel_reservation');
     console.error('Error cancelling reservation:', err);
     res.status(500).json({ message: 'Server error cancelling reservation' });
   }
@@ -228,6 +238,7 @@ router.post('/:id/deleteWithPassword', async (req, res) => {
     await User.findByIdAndDelete(req.params.id);
     return res.status(200).json({ message: "User deleted." });
   } catch (err) {
+    await logError(err, 'POST /:id/deleteWithPassword');
     console.error("Error in deleteWithPassword route:", err);
     return res.status(500).json({ error: "Server error." });
   }

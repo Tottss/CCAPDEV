@@ -45,6 +45,7 @@ router.get('/api/rooms/:room/:date/:time', async (req, res) => { // fetches deta
 
     res.json(slot);
   } catch (err) {
+    await logError(err, 'GET /api/rooms/:room/:date/:time');
     console.error(err);
     res.status(500).json({ error: 'Server error' });
   }
@@ -128,9 +129,10 @@ router.post('/api/admin/reserve', requireAuth, requireRole('admin'), async (req,
     await roomDoc.save();
     res.status(200).json({ message: "Operation completed successfully." });
   } catch (err) {
+    await logError(err, 'POST /api/admin/reserve');
     console.error(err);
     res.status(500).json({ message: "Server error: " + err.message });
   }
 });
-
+~
 module.exports = router;

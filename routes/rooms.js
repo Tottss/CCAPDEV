@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Room = require('../models/Classes'); 
 
-
+const logError = require('../logError');
 
 router.get('/api/rooms/:roomCode/:date', async (req, res) => { // fetches all timeslots for a date
   const { roomCode, date } = req.params;
@@ -22,6 +22,7 @@ router.get('/api/rooms/:roomCode/:date', async (req, res) => { // fetches all ti
 
     res.json(slots);
   } catch (err) {
+    await logError(err, 'GET /api/rooms/:roomCode/:date');
     console.error(err);
     res.status(500).json({ error: 'Server error' });
   }
@@ -43,6 +44,7 @@ router.get('/api/rooms/:room/:date/:time', async (req, res) => { // fetches deta
 
     res.json(slot);
   } catch (err) {
+    await logError(err, 'GET /api/rooms/:room/:date/:time');
     console.error(err);
     res.status(500).json({ error: 'Server error' });
   }
@@ -89,6 +91,7 @@ router.post('/api/reserve', async (req, res) => {
     await roomDoc.save();
     res.status(200).json({ message: "Seats reserved successfully." });
   } catch (err) {
+    await logError(err, 'POST /api/reserve');
     console.error(err);
     res.status(500).json({ message: "Server error." });
   }

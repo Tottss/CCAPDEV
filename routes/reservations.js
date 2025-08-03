@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Room = require('../models/Classes'); 
 
+const logError = require('../logError');
+
 router.get('/', async (req, res) => {
   const currentUser = req.query.user;   
 
@@ -32,6 +34,7 @@ router.get('/', async (req, res) => {
 
     res.json(out);
   } catch (e) {
+    await logError(err, 'GET /');
     console.error(e);
     res.status(500).json({ error: 'Server error' });
   }
