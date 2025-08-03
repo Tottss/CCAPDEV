@@ -15,10 +15,8 @@ mongoose.connect('mongodb://localhost:27017/computerReservationDB', {
 }).then(async () => {
   console.log("MongoDB connected");
 
-  const count = await User.countDocuments({});
-  if (count === 0) {
-    addSampleData();
-  }
+    addSampleData(); // removed the checkers since it should always delete everything then insert sample data
+
 }).catch(err => console.log("MongoDB error:", err));
 
 app.use(session({ // session

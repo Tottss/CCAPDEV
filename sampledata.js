@@ -1,8 +1,9 @@
-function addSampleData() {
-    const User = require('./models/User');
-    const Room = require('./models/Classes');
+const bcrypt = require('bcrypt');
+async function addSampleData() {
+  const User = require('./models/User');
+  const Room = require('./models/Classes');
 
-    User.insertMany([
+    const users = [
     {
       firstName: "Alice",
       lastName: "Santos",
@@ -49,21 +50,29 @@ function addSampleData() {
       username: "Admin",
       password: "1234"
     }
-    ]).then(function () {
-        console.log("Users inserted")
-    }).catch(function (error) {
-        console.log(error) 
-    })
+    ]
+
+    for (let user of users) {
+        const salt = await bcrypt.genSalt(10);
+        user.password = await bcrypt.hash(user.password, salt);
+    }
+
+    await User.deleteMany({});
+    await User.insertMany(users);
+    console.log("Users inserted with hashed passwords");
+
+    await Room.deleteMany({});
+    console.log("Rooms cleared");
 
     const cap = 35;
-const timeSlots = [
-  "0730 - 0800",
-  "0800 - 0830",
-  "0830 - 0900",
-  "0900 - 0930",
-  "0930 - 1000",
-  "1000 - 1030"
-];
+  const timeSlots = [
+    "0730 - 0800",
+    "0800 - 0830",
+    "0830 - 0900",
+    "0900 - 0930",
+    "0930 - 1000",
+    "1000 - 1030"
+  ];
 
 function generateSeatData() {
   return Array.from({ length: cap }, (_, i) => ({
