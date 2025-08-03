@@ -4,6 +4,7 @@ const path = require('path');
 const User = require('../models/User'); // adjust path if needed
 const Room = require('../models/Classes');
 const router = express.Router();
+const bcrypt = require('bcrypt');
 
 // Multer setup for file uploads
 const storage = multer.diskStorage({
@@ -212,4 +213,22 @@ router.get('/logout', (req, res) => {
   });
 });
 
+
+router.post('/:id/deleteWithPassword', async (req, res) => {
+  console.log("Delete request received for:", req.params.id);
+  try {
+    const { password } = req.body;
+    const user = await User.findById(req.params.id);
+    if (!user) return res.status(404).json({ error: "User not found." });
+
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) return res.status(401).json({ error: "Incorrect password." });
+
+    await User.findByIdAndDelete(req.params.id);
+    return res.status(200).json({ message: "User deleted." });
+  } catch (err) {
+    console.error("Error in deleteWithPassword route:", err);
+    return res.status(500).json({ error: "Server error." });
+  }
+});
 module.exports = router;
