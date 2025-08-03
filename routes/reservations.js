@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
 
     res.json(out);
   } catch (e) {
-    await logError(err, 'GET /');
+    await logError(e, 'GET /');
     console.error(e);
     res.status(500).json({ error: 'Server error' });
   }
