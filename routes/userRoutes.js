@@ -188,6 +188,7 @@ router.get('/view_reservation/:username', requireAuth, async (req, res) => {
     res.status(500).send("Error fetching reservations");
   }
 });
+
 //cancel res
 // btw the implementation of this just sets
 // reservedBy and reservationDate to null
@@ -233,8 +234,6 @@ router.delete('/cancel_reservation', requireAuth, async (req, res) => {
     res.status(500).json({ message: 'Server error cancelling reservation' });
   }
 });
-
-
 
 router.post('/:id/deleteWithPassword', requireAuth, async (req, res) => {
   try {
