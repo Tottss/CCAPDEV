@@ -134,5 +134,5 @@ router.post('/api/admin/reserve', requireAuth, requireRole('admin'), async (req,
     res.status(500).json({ message: "Server error: " + err.message });
   }
 });
-~
+
 module.exports = router;
