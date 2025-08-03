@@ -79,21 +79,23 @@ async function updateRoomDisplay() {
 
 async function loadReservationHistory() {
   const historyList = document.getElementById("historyList");
+  if (!historyList) {
+    return; // tbh dont know what historyList is, this just shuts up the console error
+  }
+
   historyList.innerHTML = "";
 
   try {
-    // Ask the server for the current user
     const meRes = await fetch('/api/user/me', { credentials: 'include' });
     if (!meRes.ok) {
       alert("User not logged in.");
-      window.location.href = '/login'; // optional: force redirect
+      window.location.href = '/login';
       return;
     }
     const user = await meRes.json();
 
     console.log("Loading reservation history for user:", user.firstName);
 
-    // Fetch reservations tied to that user
     const res = await fetch(`/api/reservations?user=${encodeURIComponent(user.firstName)}`, {
       credentials: 'include'
     });
@@ -118,6 +120,7 @@ async function loadReservationHistory() {
     historyList.innerHTML = "<li>Failed to load history.</li>";
   }
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const today = new Date();
