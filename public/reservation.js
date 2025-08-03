@@ -72,9 +72,11 @@ async function loadReservations(tabName) {
     }
 
     const now = new Date();
+    now.setHours(0, 0, 0, 0);
     const filtered = reservations
       .filter(r => {
         const resDate = new Date(r.date);
+        resDate.setHours(0, 0, 0, 0);
         return tabName === 'upcoming' ? resDate >= now : resDate < now;
       })
       .sort((a, b) => new Date(a.date) - new Date(b.date));
